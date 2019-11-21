@@ -236,80 +236,86 @@
     </el-card>
 
     <!-- 商品表格 -->
-    <el-card shadow="never"  >
-    <template>
-      <el-table :data="tableData" border  style="width: 100%">
-        <el-table-column  fixed  type="selection"></el-table-column>
-        <el-table-column label="编号">
-          <template slot-scope="scope">{{ scope.row.name }}</template>
-        </el-table-column>
-        <el-table-column label="商品图片">
-          
-          <el-popover trigger="hover" placement="top">
-            <div slot="reference">
-              <img
-                style="width:100px"
-                src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180607/5ac1bf58Ndefaac16.jpg"
-                alt
-              />
-            </div>
-          </el-popover>
-        </el-table-column>
-        <el-table-column label="商品名称">
-          <template slot-scope="scope">
-            <div slot="reference" class="name-wrapper">{{ scope.row.shangpinmingcheng }}</div>
-          </template>
-        </el-table-column>
-        <el-table-column label="价格/货号">
-          <template slot-scope="scope">
-            <div slot="reference" class="name-wrapper">
-              {{ scope.row.jiegeHuohao.jiage }}<br/>
-
-              {{ scope.row.jiegeHuohao. huohao}}
-            </div>
-          </template>
-        </el-table-column>
-        <el-table-column label="标签">
-          <template slot-scope="scope">
-            <div slot="reference" class="name-wrapper">
-              {{ scope.row.biaoqian.shangjia }} <el-switch></el-switch><br/>
-              {{ scope.row.biaoqian.xinpin }} <el-switch></el-switch><br/>
-              {{ scope.row.biaoqian.tuijian }} <el-switch></el-switch>
-            </div>
-          </template>
-        </el-table-column>
-        <el-table-column label="排序">
-          <template slot-scope="scope">
-            <div slot="reference" class="name-wrapper">{{ scope.row.paixu }}</div>
-          </template>
-        </el-table-column>
-        <el-table-column label="SKU库">
-          <template slot-scope="scope">
-            <div slot="reference" class="name-wrapper" @click="SKU" >❤</div>
-          </template>
-        </el-table-column>
-        <el-table-column label="销量">
-          <template slot-scope="scope">
-            <div slot="reference" class="name-wrapper">{{ scope.row.xiaoliang }}</div>
-          </template>
-        </el-table-column>
-        <el-table-column label="审核状态">
-          <template slot-scope="scope">
-            <div slot="reference" class="name-wrapper">
-              {{ scope.row.shenhe.weishenhe }}<br/>
-              {{ scope.row.shenhe.shenhexiangqing }}
-            </div>
-          </template>
-        </el-table-column>
-        <el-table-column fixed="right"  label="操作"  width="100"  >
-          <template slot-scope="scope">
-            <el-button size="mini">查看</el-button>
-            <el-button size="mini">编辑</el-button><br/>
-            <el-button size="mini">日志</el-button>
-            <el-button size="mini" type="danger">删除</el-button>
-          </template>
-        </el-table-column>
-      </el-table>
+    <el-card shadow="never">
+      <template>
+        <el-table :data="tableData" border style="width: 100%">
+          <el-table-column fixed type="selection"></el-table-column>
+          <el-table-column label="编号">
+            <template slot-scope="scope">{{ scope.row.name }}</template>
+          </el-table-column>
+          <el-table-column label="商品图片">
+            <el-popover trigger="hover" placement="top">
+              <div slot="reference">
+                <img
+                  style="width:100px"
+                  src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180607/5ac1bf58Ndefaac16.jpg"
+                  alt
+                />
+              </div>
+            </el-popover>
+          </el-table-column>
+          <el-table-column label="商品名称">
+            <template slot-scope="scope">
+              <div slot="reference" class="name-wrapper">{{ scope.row.shangpinmingcheng }}</div>
+            </template>
+          </el-table-column>
+          <el-table-column label="价格/货号">
+            <template slot-scope="scope">
+              <div slot="reference" class="name-wrapper">
+                {{ scope.row.jiegeHuohao.jiage }}
+                <br />
+                {{ scope.row.jiegeHuohao. huohao}}
+              </div>
+            </template>
+          </el-table-column>
+          <el-table-column label="标签">
+            <template slot-scope="scope">
+              <div slot="reference" class="name-wrapper">
+                {{ scope.row.biaoqian.shangjia }}
+                <el-switch></el-switch>
+                <br />
+                {{ scope.row.biaoqian.xinpin }}
+                <el-switch></el-switch>
+                <br />
+                {{ scope.row.biaoqian.tuijian }}
+                <el-switch></el-switch>
+              </div>
+            </template>
+          </el-table-column>
+          <el-table-column label="排序">
+            <template slot-scope="scope">
+              <div slot="reference" class="name-wrapper">{{ scope.row.paixu }}</div>
+            </template>
+          </el-table-column>
+          <el-table-column label="SKU库">
+            <template slot-scope="scope">
+              <div slot="reference" class="name-wrapper" @click="SKU">❤</div>
+            </template>
+          </el-table-column>
+          <el-table-column label="销量">
+            <template slot-scope="scope">
+              <div slot="reference" class="name-wrapper">{{ scope.row.xiaoliang }}</div>
+            </template>
+          </el-table-column>
+          <el-table-column label="审核状态">
+            <template slot-scope="scope">
+              <div slot="reference" class="name-wrapper">
+                {{ scope.row.shenhe.weishenhe }}
+                <br />
+                {{ scope.row.shenhe.shenhexiangqing }}
+              </div>
+            </template>
+          </el-table-column>
+          <el-table-column fixed="right" label="操作" width="100">
+            <template slot-scope="scope">
+              <el-button size="mini">查看</el-button>
+              <el-button size="mini">编辑</el-button>
+              <br />
+              <el-button size="mini">日志</el-button>
+              <el-button size="mini" type="danger">删除</el-button>
+            </template>
+          </el-table-column>
+        </el-table>
       </template>
     </el-card>
 
@@ -336,6 +342,12 @@
           ></el-pagination>
         </div>
       </div>
+    </div>
+
+    <!-- 点击SKU弹出的页面 -->
+    <div>
+      
+
     </div>
   </div>
 </template>
@@ -367,12 +379,12 @@ export default {
       ]
     };
   },
-  methods:{
-    SKU(){
-      alert('lqlqlq')
+  methods: {
+    SKU() {
+      alert("lqlqlq");
     }
   }
-}
+};
 </script>
 
 <style lang='stylus' rel='stylesheet/stylus' scoped>
