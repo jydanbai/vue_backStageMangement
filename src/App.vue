@@ -1,16 +1,18 @@
 <template>
   <div>
-    <h2>hello</h2>
+    <Category/>
+    <router-view></router-view>
   </div>
 </template>
+<script>
 
-<script type="text/ecmascript-6">
+ import Category from './components/Category/Category'
   export default {
+    components:{
+      Category
+    }
   }
 </script>
+<style lang="stylus" rel="stylesheet/stylus">
 
-<style scoped lang='stylus' rel='stylesheet/stylus'>
-
- 
 </style>
-
