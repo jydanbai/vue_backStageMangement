@@ -1,8 +1,6 @@
 <template>
   <div>
-    商品
-    <router-view></router-view>
-
+    角色管理
   </div>
 </template>
 

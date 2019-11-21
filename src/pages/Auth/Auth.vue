@@ -1,6 +1,6 @@
 <template>
   <div>
-    权限
+    <router-view></router-view>
   </div>
 </template>
 

@@ -1,8 +1,6 @@
 <template>
   <div>
-    商品
-    <router-view></router-view>
-
+    订单设置
   </div>
 </template>
 
