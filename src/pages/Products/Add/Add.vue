@@ -237,7 +237,7 @@
 
     <!-- 商品表格 -->
     <el-card shadow="never">
-      <el-table :data="tableData" border fixed="right" style="width: 100%" max-width="250">
+      <el-table :data="tableData" border fixed="right" max-width="250">
         <el-table-column type="selection"></el-table-column>
         <el-table-column label="编号">
           <template slot-scope="scope">{{ scope.row.name }}</template>
