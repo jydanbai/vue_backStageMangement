@@ -1,6 +1,6 @@
 <template>
   <div>
-    <router-view></router-view>
+    商品分类
   </div>
 </template>
 

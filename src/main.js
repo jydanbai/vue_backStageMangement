@@ -1,14 +1,12 @@
 import Vue from 'vue'
 import App from './App.vue'
-
+import Element from 'element-ui'
 import router from './router'
-import './plugins/element.js'
-import 'element-ui/lib/theme-chalk/index.css';
-
+import 'element-ui/lib/theme-chalk/index.css'
+    
 Vue.config.productionTip = false
 
-Vue.use(ElementUI)
-Vue.use(Vuex)
+Vue.use(Element)
 // 注册全局组件
 
 // Vue.component()
