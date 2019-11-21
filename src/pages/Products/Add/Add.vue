@@ -236,9 +236,10 @@
     </el-card>
 
     <!-- 商品表格 -->
-    <el-card shadow="never">
-      <el-table :data="tableData" border fixed="right" max-width="250">
-        <el-table-column type="selection"></el-table-column>
+    <el-card shadow="never"  >
+    <template>
+      <el-table :data="tableData" border  style="width: 100%">
+        <el-table-column  fixed  type="selection"></el-table-column>
         <el-table-column label="编号">
           <template slot-scope="scope">{{ scope.row.name }}</template>
         </el-table-column>
@@ -262,7 +263,8 @@
         <el-table-column label="价格/货号">
           <template slot-scope="scope">
             <div slot="reference" class="name-wrapper">
-              {{ scope.row.jiegeHuohao.jiage }}
+              {{ scope.row.jiegeHuohao.jiage }}<br/>
+
               {{ scope.row.jiegeHuohao. huohao}}
             </div>
           </template>
@@ -270,9 +272,9 @@
         <el-table-column label="标签">
           <template slot-scope="scope">
             <div slot="reference" class="name-wrapper">
-              {{ scope.row.biaoqian.shangjia }}
-              {{ scope.row.biaoqian.xinpin }}
-              {{ scope.row.biaoqian.tuijian }}
+              {{ scope.row.biaoqian.shangjia }} <el-switch></el-switch><br/>
+              {{ scope.row.biaoqian.xinpin }} <el-switch></el-switch><br/>
+              {{ scope.row.biaoqian.tuijian }} <el-switch></el-switch>
             </div>
           </template>
         </el-table-column>
@@ -283,7 +285,7 @@
         </el-table-column>
         <el-table-column label="SKU库">
           <template slot-scope="scope">
-            <div slot="reference" class="name-wrapper">{{ scope.row.name }}</div>
+            <div slot="reference" class="name-wrapper" @click="SKU" >❤</div>
           </template>
         </el-table-column>
         <el-table-column label="销量">
@@ -294,20 +296,21 @@
         <el-table-column label="审核状态">
           <template slot-scope="scope">
             <div slot="reference" class="name-wrapper">
-              {{ scope.row.shenhe.weishenhe }}
+              {{ scope.row.shenhe.weishenhe }}<br/>
               {{ scope.row.shenhe.shenhexiangqing }}
             </div>
           </template>
         </el-table-column>
-        <el-table-column label="操作">
+        <el-table-column fixed="right"  label="操作"  width="100"  >
           <template slot-scope="scope">
             <el-button size="mini">查看</el-button>
-            <el-button size="mini">编辑</el-button>
+            <el-button size="mini">编辑</el-button><br/>
             <el-button size="mini">日志</el-button>
             <el-button size="mini" type="danger">删除</el-button>
           </template>
         </el-table-column>
       </el-table>
+      </template>
     </el-card>
 
     <!-- 底部 -->
@@ -346,8 +349,8 @@ export default {
           name: "王小虎",
           shangpinmingcheng: "华为手机",
           jiegeHuohao: {
-            jiage: "￥3788",
-            huohao: "6946605"
+            jiage: "价格：￥3788",
+            huohao: "货号：6946605"
           },
           biaoqian: {
             shangjia: "上架:",
@@ -363,8 +366,13 @@ export default {
         }
       ]
     };
+  },
+  methods:{
+    SKU(){
+      alert('lqlqlq')
+    }
   }
-};
+}
 </script>
 
 <style lang='stylus' rel='stylesheet/stylus' scoped>
