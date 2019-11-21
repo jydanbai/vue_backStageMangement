@@ -2,11 +2,12 @@
   <div id="loginContainer">
     <div id="container">
       <h2 class="h2">后台登陆系统</h2>
-      <el-input class="input" prefix-icon='el-icon-user-solid' placeholder="请输入用户名" v-model="input1" >
-        
+      <el-input class="input"  placeholder="请输入用户名" v-model="input1" >
+        <i slot="prefix" class="el-input__icon el-icon-user-solid"></i>
       </el-input>
-      <el-input class="input" prefix-icon='el-icon-s-goods' placeholder="请输入密码" v-model="input" show-password>
-
+      
+      <el-input class="input"  placeholder="请输入密码" v-model="input" show-password>
+        <i slot="prefix" class="el-input__icon el-icon-s-goods"></i>
       </el-input>
       <el-button class="btn" type="primary">登 陆</el-button>
     </div>
@@ -52,7 +53,8 @@
         width 450px
         height 54px
         margin 10px auto
-        
+        .el-input__icon
+          margin-top -5px 
       .btn
         width 450px
         height 50px  
