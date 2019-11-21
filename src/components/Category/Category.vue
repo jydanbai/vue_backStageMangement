@@ -98,10 +98,14 @@
 </template>
 
 <script>
+// import routes from '../../router/routes';
+// import routes from '../../router/routes'
 export default {
+  // props:['meta'],
   data() {
     return {
-      isCollapse: true
+      isCollapse: true,
+      titles:[],
     };
   },
   methods: {
@@ -114,8 +118,8 @@ export default {
     goPath(path) {
       // $router(路由器对象，包含了路由跳转的方法) $route(路由信息对象， 包含当前路由的所有路由信息)
       this.$route.path !== path && this.$router.push(path);
-      console.log("aaaa");
-      // this.$router.push()
+      // this.titles= this.titles.push(this.title)
+      // console.log(this.titles)
     }
   }
 };
