@@ -8,18 +8,20 @@
       @select="handleSelect"
       background-color="#fff"
       text-color="#000"
-      active-text-color="#ffd04b"
+      active-text-color="#64656C"
     >
        <div class="breadNav">
         <el-breadcrumb separator-class="el-icon-arrow-right">
           <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-          <el-breadcrumb-item>活动管理</el-breadcrumb-item>
+          <el-breadcrumb-item :to="{path:'/'}">活动管理</el-breadcrumb-item>
           <el-breadcrumb-item>活动列表</el-breadcrumb-item>
           <el-breadcrumb-item>活动详情</el-breadcrumb-item>
       </el-breadcrumb>
       </div>
       <div class="rightNav">
-        <el-menu-item index="3">退出登录</el-menu-item>
+        <el-menu-item index="3">
+          <i class="iconfont icon-tuichu1"></i>
+          </el-menu-item>
       <el-submenu index="2">
         <template slot="title">admin</template>
         <el-menu-item index="2-1">个人中心</el-menu-item>
@@ -41,7 +43,24 @@ export default {
   methods: {
     handleSelect(key, keyPath) {
       console.log(key, keyPath);
-    }
+    },
+  //   getTitle = () => {
+  //   let title = ''
+  //   const path = this.props.location.pathname
+  //   menuList.forEach(item => {
+  //     if (item.key===path) {
+  //       title = item.title
+  //     } else if (item.children) {
+  //       const cItem = item.children.find(cItem => path.indexOf(cItem.key)===0)
+  //       if (cItem) {
+  //         title = cItem.title
+  //       }
+  //     }
+      
+  //   })
+
+  //   return title
+  // }
   }
 };
 </script>
@@ -57,6 +76,9 @@ export default {
       float right
       display flex
       flex-direction row-reverse
+  i
+    margin-right 8px
+    font-size 16px
   
 
 </style>
