@@ -1,8 +1,6 @@
 <template>
   <div>
-    <el-card>
-      商品分类
-    </el-card>
+    商品分类
   </div>
 </template>
 
@@ -10,4 +8,7 @@
 export default {};
 </script>
 
-<style lang='stylus' rel='stylesheet/stylus' scoped></style>
+<style lang='stylus' rel='stylesheet/stylus' scoped>
+
+
+</style>
