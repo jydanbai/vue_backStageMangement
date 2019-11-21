@@ -128,11 +128,9 @@ export default {
 <style lang='stylus' rel='stylesheet/stylus' >
 #categoryContainer 
   .el-menu-vertical-demo:not(.el-menu--collapse) 
-    position: relative
+    position: fixed
     width: 200px;
     height: 100vh;
-  
-
   .btns 
     position: absolute
     left: 20px;
