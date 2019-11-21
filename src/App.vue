@@ -1,26 +1,31 @@
 <template>
   <div id="app">
-    <Category/>
+    <Category v-if="$route.meta.isShowCategory" />
+   <div class="rightContent">
+      <Header v-if="$route.meta.isShowCategory" />
+    <router-view></router-view>
+   </div>
   </div>
 </template>
 
 <script>
   import Category from './components/Category/Category'
+  import Header from './components/Header/Header'
 export default {
   name: 'app',
   components: {
-    Category
+    Category,
+    Header
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang='stylus' rel='stylesheet/stylus' scoped>
+  #app
+    display flex
+  .rightContent
+    width 100%
 </style>
+
+
+
