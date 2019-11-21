@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <Category v-if="$route.meta.isShowCategory" />
-    <div class="rightContent">
-      <Header v-if="$route.meta.isShowCategory" />
-      <router-view></router-view>
-    </div>
+    <Category v-if="$route.meta.isShowCategory" :meta="$route.meta"/>
+   <div class="rightContent">
+      <Header v-if="$route.meta.isShowCategory"  />
+    <router-view></router-view>
+   </div>
   </div>
 </template>
 
