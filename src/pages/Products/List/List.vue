@@ -322,6 +322,7 @@
 </template>
 
 <script type="text/ecmascript-6">
+// import { mapState } from 'vuex'
 export default {
   data() {
     return {
@@ -352,8 +353,15 @@ export default {
   methods: {
     SKU() {
       alert("lqlqlq");
+      // this.$store.dispatch('getProductsListAction')
+      // console.log(this.productsList)
     }
-  }
+  },
+  // computed:{
+  //   ...mapState({
+  //     productsList: state => state.productsList
+  //   })
+  // }
 };
 </script>
 

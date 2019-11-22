@@ -31,7 +31,7 @@
       <el-submenu index="2">
         <template slot="title" >
          <div class="admin">
-           admin
+           {{username}}
          </div>
         </template>
         <el-menu-item index="2-1">个人中心</el-menu-item>
@@ -43,6 +43,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   data() {
     return {
@@ -64,11 +65,15 @@ export default {
           this.$router.replace('/login')
         })
       }
-    }
-    // logout(path){
-    //   this.$router.replace(path)
-    // }
-  
+    },
+   computed:{
+     ...mapState({
+       username:state =>state.loginInfo.username
+     })
+   },
+   mounted(){
+    console.log( this.username)
+   }
 };
 </script>
 
