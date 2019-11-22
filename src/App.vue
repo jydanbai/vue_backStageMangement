@@ -23,7 +23,7 @@ export default {
 <style lang='stylus' rel='stylesheet/stylus' scoped>
 #app 
   display: flex;
-
+  width 100%
 
 .rightContent 
   width: 100%;

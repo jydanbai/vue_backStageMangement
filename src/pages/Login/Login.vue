@@ -9,7 +9,7 @@
       <el-input class="input"  placeholder="请输入密码" v-model="input" show-password>
         <i slot="prefix" class="el-input__icon el-icon-s-goods"></i>
       </el-input>
-      <el-button class="btn" type="primary">登 陆</el-button>
+      <el-button class="btn" type="primary">登 录</el-button>
     </div>
   </div>
 </template>
@@ -21,7 +21,8 @@
         input: '',
         input1:''
       }
-    }
+    },
+  
   }
 </script>
 
@@ -31,6 +32,7 @@
     height 100%
     position absolute
     background #304156
+    margin-left -200px
     #container
       width 520px
       height 396px
