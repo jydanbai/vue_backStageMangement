@@ -4,11 +4,12 @@
 */
 import ajax from './ajax'
 
-// const BASE = 'http://localhost:5000'
-const BASE = process.env.NODE_ENV === 'production' ? '/api' : ''
+// const BASE = 'http://192.168.12.60:4000'
+// const BASE = process.env.NODE_ENV === 'production' ? '/api' : ''
+const BASE = '/api'
 
 // 请求登陆
-// export const reqLogin = (username, password) =>  ajax.post(BASE + '/login', {username, password})
+export const reqLogin = (username, password) =>  ajax.post(BASE + '/login', {username, password})
 
 
 
