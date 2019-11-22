@@ -19,7 +19,12 @@
       </el-breadcrumb>
       </div>
       <div class="rightNav">
-        <el-menu-item index="3">退出登录</el-menu-item>
+        <el-menu-item index="3" @click="logout">
+           <el-button type="text" >
+               <i class="iconfont icon-tuichu1"></i>
+           </el-button>
+        
+          </el-menu-item>
       <el-submenu index="2">
         <template slot="title">admin</template>
         <el-menu-item index="2-1">个人中心</el-menu-item>
@@ -40,9 +45,23 @@ export default {
   },
   methods: {
     handleSelect(key, keyPath) {
-      console.log(key, keyPath);
+      console.log(key, keyPath)
+    },
+     logout() {
+        this.$confirm('确认退出登录吗', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning',
+          center: true
+        }).then(() => {
+          this.$router.replace('/login')
+        })
+      }
     }
-  }
+    // logout(path){
+    //   this.$router.replace(path)
+    // }
+  
 };
 </script>
 
