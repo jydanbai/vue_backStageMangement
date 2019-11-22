@@ -23,7 +23,10 @@
       </div>
       <div class="rightNav">
         <el-menu-item index="3">
-          <i class="iconfont icon-tuichu1"></i>
+           <el-button type="text" @click="logout">
+               <i class="iconfont icon-tuichu1"></i>
+           </el-button>
+        
           </el-menu-item>
       <el-submenu index="2">
         <template slot="title" >
@@ -52,7 +55,21 @@ export default {
       console.log(key, keyPath)
       console.log(this.$route)
     },
-  },
+     logout() {
+        this.$confirm('确认退出登录吗', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning',
+          center: true
+        }).then(() => {
+          this.$router.replace('/login')
+        })
+      }
+    }
+    // logout(path){
+    //   this.$router.replace(path)
+    // }
+  
 };
 </script>
 
