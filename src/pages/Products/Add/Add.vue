@@ -11,9 +11,9 @@
       <!--添加商品  -->
       <el-form  label-width="80px">
         <el-form-item label="* 商品分类">
-          <el-select  placeholder="请选择">
-            <el-option label="苹果" ></el-option>
-            <el-option label="西瓜" ></el-option>
+          <el-select  placeholder="请选择" value="8">
+            <el-option label="苹果" value="8"></el-option>
+            <el-option label="西瓜" value="8"></el-option>
           </el-select>
         </el-form-item>
         <el-form-item label="* 商品名称">
@@ -23,9 +23,9 @@
           <el-input    ></el-input>
         </el-form-item>
         <el-form-item label="* 商品品牌">
-          <el-select  placeholder="请选择">
-            <el-option label="苹果" "></el-option>
-            <el-option label="西瓜" "></el-option>
+          <el-select  placeholder="请选择" value="8">
+            <el-option label="苹果" value="8"></el-option>
+            <el-option label="西瓜" value="8"></el-option>
           </el-select>
         </el-form-item>
          <el-form-item label="商品介绍">
