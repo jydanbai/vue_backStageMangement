@@ -63,6 +63,9 @@ export default {
           center: true
         }).then(() => {
           this.$router.replace('/login')
+          this.$store.dispatch('clearTokenAction')
+          this.$store.dispatch('clearLoginInfoAction')
+          // localStorage.removeItem('token_key')
         })
       }
     },

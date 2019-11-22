@@ -6,18 +6,25 @@ import {reqProductsList } from '../api'
 import {
   SAVE_PRODUCTSLIST,
   SAVE_LOGININFO,
-  SAVE_TOKEN
+  SAVE_TOKEN,
+  CLEAR_TOKEN,
+  CLEAR_LOGININFO
 } from './mutation-types'
 
 
 export default {
-
-   getLoginInfoAction({commit},{loginInfo}){
   
+  getLoginInfoAction({commit},{loginInfo}){
     commit(SAVE_LOGININFO,{loginInfo})
   },
   getTokenAction({commit},{token}){
     commit(SAVE_TOKEN,{token})
+  },
+  clearTokenAction({commit}){
+    commit(CLEAR_TOKEN)
+  },
+  clearLoginInfoAction({commit}){
+    commit(CLEAR_LOGININFO)
   },
 
 

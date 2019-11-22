@@ -3,7 +3,7 @@
  */
 
  
- import { SAVE_PRODUCTSLIST,SAVE_LOGININFO ,SAVE_TOKEN} from './mutation-types'
+ import { SAVE_PRODUCTSLIST,SAVE_LOGININFO ,SAVE_TOKEN,CLEAR_TOKEN,CLEAR_LOGININFO} from './mutation-types'
 export default {
 
   // 获取登录信息的mutation
@@ -13,6 +13,13 @@ export default {
     [SAVE_TOKEN](state,{token}){
       state.token=token
       localStorage.setItem('token_key',token)
+    },
+    [CLEAR_TOKEN](state){
+      state.token=''
+      localStorage.removeItem('token_key')
+    },
+    [CLEAR_LOGININFO](state){
+      state.loginInfo={}
     },
 
 
