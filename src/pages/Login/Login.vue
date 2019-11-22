@@ -10,7 +10,7 @@
         </el-form-item>
 
         <el-form-item  prop="pwd" class="container-item">
-          <el-input type="password" v-model="ruleForm.pwd"  placeholder="请输入密码" show-password class="inputWidth">
+          <el-input type="password" v-model="ruleForm.pwd" @keyup.enter.native="login" placeholder="请输入密码" show-password class="inputWidth">
             <i slot="prefix" class="iconfont icon-mima"></i>
           </el-input>
         </el-form-item>

@@ -11,6 +11,8 @@ const BASE = '/api'
 // 请求登陆
 export const reqLogin = (username, password) =>  ajax.post(BASE + '/login', {username, password})
 
+// 自动登录
+
 
 
 // const persons/personList/personArr = [{}, {}]
