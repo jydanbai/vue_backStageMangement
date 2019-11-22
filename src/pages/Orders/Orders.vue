@@ -5,7 +5,16 @@
 </template>
 
 <script type="text/ecmascript-6">
+import { gitOrderDatas } from "../../api";
+import { mapState } from "vuex";
   export default {
+    async mounted(){
+      let resut = await gitOrderDatas()
+      console.log(resut)
+    },
+    mounted(){
+      this.$store.dispatch('gitOrderDatasAction')
+    }
   }
 </script>
 

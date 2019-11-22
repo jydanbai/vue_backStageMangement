@@ -23,4 +23,12 @@ export const reqProductsList = (pageNum, pageSize) => ajax(BASE + '/products/lis
     pageSize
   }
 })
+//测试mock
+// export const text = ()=>ajax({
+//   url:'/test'
+// })
 
+//
+export const gitOrderDatas = ()=>ajax({
+  url:'/orderDatas'
+})
