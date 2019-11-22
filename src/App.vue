@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <Category v-if="$route.meta.isShowCategory" />
+    <Category v-if="$route.meta.isShowCategory" :meta="$route.meta"/>
    <div class="rightContent">
-      <Header v-if="$route.meta.isShowCategory" />
+      <Header v-if="$route.meta.isShowCategory"  />
     <router-view></router-view>
    </div>
   </div>
 </template>
 
 <script>
-  import Category from './components/Category/Category'
-  import Header from './components/Header/Header'
+import Category from "./components/Category/Category";
+import Header from "./components/Header/Header";
 export default {
   name: "app",
   components: {
@@ -21,10 +21,14 @@ export default {
 </script>
 
 <style lang='stylus' rel='stylesheet/stylus' scoped>
-  #app
-    display flex
-  .rightContent
-    width 100%
+#app 
+  display: flex;
+
+
+.rightContent 
+  width: 100%;
+  padding-left 200px
+
 </style>
 
 

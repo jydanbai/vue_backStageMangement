@@ -38,6 +38,7 @@ export default [
     path:'/home',
     component:Home,
     meta:{
+      title:'首页',
       isShowCategory:true
     },
     
@@ -46,6 +47,7 @@ export default [
     path:'/products',
     component:Products,
     meta:{
+      title:'商品管理',
       isShowCategory:true
     },
     children: [
@@ -53,6 +55,7 @@ export default [
         path: '/add',
         component: Add,
         meta:{
+          title:'添加商品',
           isShowCategory:true
         },
       },
@@ -60,6 +63,7 @@ export default [
         path: '/list',
         component: List,
         meta:{
+          title:'商品列表',
           isShowCategory:true
         },
       },
@@ -67,6 +71,7 @@ export default [
         path: '/category',
         component: Category,
         meta:{
+          title:'商品分类',
           isShowCategory:true
         },
       },
@@ -83,6 +88,7 @@ export default [
     path:'/orders',
     component:Orders,
     meta:{
+      title:'订单管理',
       isShowCategory:true
     },
     children: [
@@ -90,6 +96,7 @@ export default [
         path: '/orderslist',
         component: OrdersList,
         meta:{
+          title:'订单列表',
           isShowCategory:true
         },
       },
@@ -97,6 +104,7 @@ export default [
         path: '/ordersset',
         component: OrdersSet,
         meta:{
+          title:'订单设置',
           isShowCategory:true
         },
       },
@@ -106,6 +114,7 @@ export default [
     path:'/auth',
     component:Auth,
     meta:{
+      title:'权限管理',
       isShowCategory:true
     },
     children: [
@@ -113,6 +122,7 @@ export default [
         path: '/usermanage',
         component: UserManage,
         meta:{
+          title:'用户管理',
           isShowCategory:true
         },
       },
@@ -120,6 +130,7 @@ export default [
         path: '/rolemanage',
         component: RoleManage,
         meta:{
+          title:'角色管理',
           isShowCategory:true
         },
       },
