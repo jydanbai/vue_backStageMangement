@@ -5,12 +5,13 @@ import Element from 'element-ui'
 import router from './router'
 import store from './store'
 import 'element-ui/lib/theme-chalk/index.css'
+import * as API from './api'
     
 //  引入mock
 import './mock/mockServer'
 
 Vue.config.productionTip = false
-
+Vue.prototype.$API = API
 Vue.use(Element)
 // 注册全局组件
 

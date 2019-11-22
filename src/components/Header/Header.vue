@@ -26,7 +26,11 @@
         
           </el-menu-item>
       <el-submenu index="2">
-        <template slot="title">admin</template>
+        <template slot="title" >
+         <div class="admin">
+           {{username}}
+         </div>
+        </template>
         <el-menu-item index="2-1">个人中心</el-menu-item>
         <el-menu-item index="2-2">修改密码</el-menu-item>
       </el-submenu>
@@ -36,6 +40,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   data() {
     return {
@@ -55,13 +60,20 @@ export default {
           center: true
         }).then(() => {
           this.$router.replace('/login')
+          this.$store.dispatch('clearTokenAction')
+          this.$store.dispatch('clearLoginInfoAction')
+          // localStorage.removeItem('token_key')
         })
       }
-    }
-    // logout(path){
-    //   this.$router.replace(path)
-    // }
-  
+    },
+   computed:{
+     ...mapState({
+       username:state =>state.loginInfo.username
+     })
+   },
+   mounted(){
+    console.log( this.username)
+   }
 };
 </script>
 

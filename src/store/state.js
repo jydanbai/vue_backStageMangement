@@ -3,5 +3,8 @@
  */
 
 export default {
-   productsList:[]
+   loginInfo:{ },
+   token:'',
+   productsList:[],
+
 }

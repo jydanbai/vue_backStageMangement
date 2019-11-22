@@ -19,7 +19,7 @@ axios.interceptors.request.use(function (config) {
   if (method.toLowerCase() === 'post' && typeof data==='object') {
     config.data = qs.stringify(data) // username=admin&password=admin
   }
-
+  // 
   return config
 })
 
