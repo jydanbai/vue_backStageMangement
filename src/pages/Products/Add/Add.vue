@@ -1,98 +1,92 @@
 <template>
   <div>
-       <el-card shadow="never" class="yqq-tianjiashangpin"  >
-      <!-- 步骤条 -->
-      <el-steps :active="2" align-center class="yqq-jindutiao"   >
-        <el-step  description="填写商品信息"></el-step>
-        <el-step  description="填写商品信息"></el-step>
-        <el-step  description="填写商品信息"></el-step>
-        <el-step  description="填写商品信息"></el-step>
-      </el-steps>
-      <!--添加商品  -->
-      <el-form  label-width="80px">
-        <el-form-item label="* 商品分类">
-          <el-select  placeholder="请选择">
-            <el-option label="苹果" ></el-option>
-            <el-option label="西瓜" ></el-option>
-          </el-select>
-        </el-form-item>
-        <el-form-item label="* 商品名称">
-          <el-input    ></el-input>
-        </el-form-item>
-        <el-form-item label="* 副标题">
-          <el-input    ></el-input>
-        </el-form-item>
-        <el-form-item label="* 商品品牌">
-          <el-select  placeholder="请选择">
-            <el-option label="苹果" "></el-option>
-            <el-option label="西瓜" "></el-option>
-          </el-select>
-        </el-form-item>
-         <el-form-item label="商品介绍">
-          <el-input type="textarea" v-model="form.desc"></el-input>
-        </el-form-item>
-        <el-form-item label="商品货号">
-          <el-input    ></el-input>
-        </el-form-item>
-        <el-form-item label="商品售价">
-          <el-input    ></el-input>
-        </el-form-item>
-        <el-form-item label="市场价">
-          <el-input    ></el-input>
-        </el-form-item>
-        <el-form-item label="商品库存">
-          <el-input    ></el-input>
-        </el-form-item>
-        <el-form-item label="计量单位">
-          <el-input    ></el-input>
-        </el-form-item>
-        <el-form-item label="商品重量">
-          <el-input    ></el-input>
-        </el-form-item>
-        <el-form-item label="排序">
-          <el-input    ></el-input>
-        </el-form-item   >
-          
-      </el-form>
-      <el-button type="primary" class="yqq-xiayibu" >下一步填写商品促销</el-button>
+    <!-- 数据列表添加 -->
+    <el-card shadow="never">
+      <div class="el-card__body">
+        <i class="el-icon-tickets"></i>
+        <span>数据列表</span>
+        <button
+          type="button"
+          style="float right"
+          class="el-button btn-add el-button--default el-button--mini"
+        >
+          <span>添加</span>
+        </button>
+      </div>
     </el-card>
+    <!-- 商品分类 -->
+    <el-card shadow="never">
+      <el-table :data="tableData" border style="width: 100%">
+        <el-table-column fixed prop="date" label="编号" width="150"></el-table-column>
+        <el-table-column prop="name" label="分类名称" width="120"></el-table-column>
+        <el-table-column prop="province" label="级别" width="120"></el-table-column>
+        <el-table-column prop="city" label="商品数量" width="120"></el-table-column>
+        <el-table-column fixed prop="date" label="导航栏" width="150">
+          <el-switch></el-switch>
+        </el-table-column>
+        <el-table-column prop="name" label="是否显示" width="120">
+          <el-switch></el-switch>
+        </el-table-column>
+        <el-table-column prop="province" label="排序" width="120"></el-table-column>
+        <el-table-column label="设置" width="100">
+          <template slot-scope="scope">
+            <el-button size="mini">查看下级</el-button>
+            <el-button size="mini">转移商品</el-button>
+          </template>
+        </el-table-column>
+        <el-table-column fixed="right" label="操作" width="100">
+          <template slot-scope="scope">
+            <el-button size="mini">编辑</el-button>
+            <el-button size="mini" type="danger">删除</el-button>
+          </template>
+        </el-table-column>
+      </el-table>
+    </el-card>
+    <!-- 底部分页 -->
+    <div class="yqq-fenlei-fenye"   >
+      <div class="footer-you">
+        <div class="block">
+          <el-pagination
+           
+            
+            :page-sizes="[100, 200, 300, 100]"
+            :page-size="100"
+            layout="total, sizes, prev, pager, next, jumper"
+            :total="20"
+          ></el-pagination>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
-<script type="text/ecmascript-6">
+<script>
 export default {
+  methods: {
+    handleClick(row) {
+      console.log(row);
+    }
+  },
+
   data() {
     return {
-      form: {
-        name: "",
-        region: "",
-        date1: "",
-        date2: "",
-        delivery: false,
-        type: [],
-        resource: "",
-        desc: ""
-      }
+      tableData: [
+        {
+          date: "1",
+          name: "服装",
+          province: "一级",
+          city: "100",
+          address: "1",
+          zip: 200333
+        }
+      ]
     };
-  },
-  methods: {
-    onSubmit() {
-      console.log("submit!");
-    }
   }
 };
 </script>
 
 <style lang='stylus' rel='stylesheet/stylus' scoped>
-  .yqq-tianjiashangpin
-    width 50%
-    height 100%
-    margin 50px auto
-    padding 50px
-    .yqq-jindutiao
-      margin-bottom 20px
-    .yqq-xiayibu
-      display block
-      margin 0 auto
+  .yqq-fenlei-fenye
+    float right 
+    margin 15px 20px 0 0 
 </style>
-

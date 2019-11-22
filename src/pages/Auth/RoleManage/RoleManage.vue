@@ -24,7 +24,7 @@
             <i class="el-icon-tickets"></i>
             数据列表
           </div>
-          <el-button type="primary" size="mini" >添加角色</el-button>
+          <el-button type="primary" size="mini">添加角色</el-button>
         </div>
       </el-form>
     </el-card>
@@ -46,6 +46,17 @@
         </el-table-column>
       </el-table>
     </el-card>
+    <!-- 底部分页 -->
+    <div class="footer-you">
+      <div class="block">
+        <el-pagination
+          :page-sizes="[100, 200, 300, 100]"
+          :page-size="100"
+          layout="total, sizes, prev, pager, next, jumper"
+          :total="20"
+        ></el-pagination>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -113,16 +124,21 @@ export default {
 <style lang='stylus' rel='stylesheet/stylus' scoped>
 .searchCard {
   margin: 20px;
+
   .searchHeader {
     display: flex;
     justify-content: space-between;
   }
 }
-.tableList {
+
+.tableList 
   margin: 20px;
-  .el-table__body {
+
+  .el-table__body 
     width: 100%;
     margin: 0;
-  }
-}
+
+.footer-you
+  float right
+  margin: 20px;
 </style>

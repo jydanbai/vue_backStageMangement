@@ -25,28 +25,18 @@
           <div style="margin-top: 15px;">
             <form class="el-form el-form--inline">
               <div class="el-form-item el-form-item--small">
-                <label class="el-form-item__label" style="width: 140px;">输入搜索：</label>
+                <label class="el-form-item__label" style="width: 140px">输入搜索：</label>
                 <div class="el-form-item__content">
-                  <div class="el-input el-input--small" style="width: 203px;">
-                    <input
-                      type="text"
-                      autocomplete="off"
-                      placeholder="商品名称"
-                      class="el-input__inner"
-                    />
+                  <div class="el-input el-input--small" style="width: 203px">
+                    <input type="text" placeholder="商品名称" class="el-input__inner" />
                   </div>
                 </div>
               </div>
               <div class="el-form-item el-form-item--small">
-                <label class="el-form-item__label" style="width: 140px;">商品货号：</label>
+                <label class="el-form-item__label" style="width: 140px">商品货号：</label>
                 <div class="el-form-item__content">
-                  <div class="el-input el-input--small" style="width: 203px;">
-                    <input
-                      type="text"
-                      autocomplete="off"
-                      placeholder="商品货号"
-                      class="el-input__inner"
-                    />
+                  <div class="el-input el-input--small" style="width: 203px">
+                    <input type="text" placeholder="商品货号" class="el-input__inner" />
                   </div>
                 </div>
               </div>
@@ -55,14 +45,7 @@
                 <div class="el-form-item__content">
                   <span class="el-cascader el-cascader--small">
                     <div class="el-input el-input--small el-input--suffix">
-                      <input
-                        type="text"
-                        autocomplete="off"
-                        readonly="readonly"
-                        placeholder="请选择"
-                        class="el-input__inner"
-                        value
-                      />
+                      <input type="text" placeholder="请选择" class="el-input__inner" />
 
                       <span class="el-input__suffix">
                         <span class="el-input__suffix-inner">
@@ -79,13 +62,7 @@
                 <div class="el-form-item__content">
                   <div class="el-select el-select--small">
                     <div class="el-input el-input--small el-input--suffix">
-                      <input
-                        type="text"
-                        autocomplete="off"
-                        placeholder="请选择品牌"
-                        readonly="readonly"
-                        class="el-input__inner"
-                      />
+                      <input type="text" placeholder="请选择品牌" class="el-input__inner" />
 
                       <span class="el-input__suffix">
                         <span class="el-input__suffix-inner">
@@ -124,13 +101,7 @@
                 <div class="el-form-item__content">
                   <div class="el-select el-select--small">
                     <div class="el-input el-input--small el-input--suffix">
-                      <input
-                        type="text"
-                        autocomplete="off"
-                        placeholder="全部"
-                        readonly="readonly"
-                        class="el-input__inner"
-                      />
+                      <input type="text" placeholder="全部" class="el-input__inner" />
 
                       <span class="el-input__suffix">
                         <span class="el-input__suffix-inner">
@@ -142,10 +113,10 @@
                       class="el-select-dropdown el-popper"
                       style="display: none; min-width: 215px;"
                     >
-                      <div class="el-scrollbar" style>
+                      <div class="el-scrollbar">
                         <div
                           class="el-select-dropdown__wrap el-scrollbar__wrap"
-                          style="margin-bottom: -17px; margin-right: -17px;"
+                          style="margin-bottom: -17px; margin-right: -17px"
                         >
                           <ul class="el-scrollbar__view el-select-dropdown__list">
                             <li class="el-select-dropdown__item">
@@ -157,10 +128,10 @@
                           </ul>
                         </div>
                         <div class="el-scrollbar__bar is-horizontal">
-                          <div class="el-scrollbar__thumb" style="transform: translateX(0%);"></div>
+                          <div class="el-scrollbar__thumb" style="transform: translateX(0%)"></div>
                         </div>
                         <div class="el-scrollbar__bar is-vertical">
-                          <div class="el-scrollbar__thumb" style="transform: translateY(0%);"></div>
+                          <div class="el-scrollbar__thumb" style="transform: translateY(0%)"></div>
                         </div>
                       </div>
                     </div>
@@ -168,17 +139,11 @@
                 </div>
               </div>
               <div class="el-form-item el-form-item--small">
-                <label class="el-form-item__label" style="width: 140px;">审核状态：</label>
+                <label class="el-form-item__label" style="width: 140px">审核状态：</label>
                 <div class="el-form-item__content">
                   <div class="el-select el-select--small">
                     <div class="el-input el-input--small el-input--suffix">
-                      <input
-                        type="text"
-                        autocomplete="off"
-                        placeholder="全部"
-                        readonly="readonly"
-                        class="el-input__inner"
-                      />
+                      <input type="text" placeholder="全部" class="el-input__inner" />
 
                       <span class="el-input__suffix">
                         <span class="el-input__suffix-inner">
@@ -287,9 +252,9 @@
               <div slot="reference" class="name-wrapper">{{ scope.row.paixu }}</div>
             </template>
           </el-table-column>
-          <el-table-column label="SKU库">
+          <el-table-column label="SKU库" class="yqq-sku0" >
             <template slot-scope="scope">
-              <div slot="reference" class="name-wrapper" @click="SKU">❤</div>
+              <div slot="reference" class="name-wrapper  el-icon-edit yqq-sku1  " @click="SKU"></div>
             </template>
           </el-table-column>
           <el-table-column label="销量">
@@ -322,19 +287,17 @@
     <!-- 底部 -->
     <div class="yqq-footer">
       <div class="footer-zuo">
-        <el-select v-model="value" placeholder="请选择">
-          <el-option>吃饭</el-option>
-          <el-option>睡觉</el-option>
-          <el-option>打豆豆</el-option>
+        <el-select placeholder="请选择" value="1">
+          <el-option value="1">吃饭</el-option>
+          <el-option value="3">睡觉</el-option>
+          <el-option value="4">打豆豆</el-option>
         </el-select>
         <el-button type="primary">主要按钮</el-button>
       </div>
+      <!-- 底部分页 -->
       <div class="footer-you">
         <div class="block">
           <el-pagination
-            @size-change="handleSizeChange"
-            @current-change="handleCurrentChange"
-            :current-page="currentPage4"
             :page-sizes="[100, 200, 300, 100]"
             :page-size="100"
             layout="total, sizes, prev, pager, next, jumper"
@@ -345,7 +308,16 @@
     </div>
 
     <!-- 点击SKU弹出的页面 -->
-    <div></div>
+    <!-- <div class="yqq-sku">
+      <div class="yqq-sku-shang">
+        <span>编辑货品信息</span>
+        <span class="el-icon-close"></span>
+      </div>
+      <div>
+        <div>商品货号：888888</div>
+        <el-input placeholder="请输入内容" clearable></el-input>
+      </div>
+    </div> -->
   </div>
 </template>
 
@@ -373,7 +345,8 @@ export default {
             shenhexiangqing: "审核详情"
           }
         }
-      ]
+      ],
+      test:''
     };
   },
   methods: {
@@ -390,4 +363,15 @@ export default {
   display: flex;
   justify-content: space-between;
 }
+
+  
+    .yqq-sku1
+      width 35px
+      height 35px
+      background-color  #409EFF
+      border-radius 50%
+      text-align center
+      line-height 35px
+      color #fff
+
 </style>
