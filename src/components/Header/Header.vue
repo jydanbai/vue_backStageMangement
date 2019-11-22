@@ -53,7 +53,6 @@ export default {
   methods: {
     handleSelect(key, keyPath) {
       console.log(key, keyPath)
-      console.log(this.$route)
     },
      logout() {
         this.$confirm('确认退出登录吗', {
