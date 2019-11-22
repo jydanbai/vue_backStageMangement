@@ -1,5 +1,5 @@
 <template>
-  <el-card shadow="never" style="  width:1000px ; margin-left:500px;margin-top:150px " >
+  <el-card shadow="never" style="  width:1000px ; margin-left:100px;margin-top:100px " >
   <form class="el-form">
     <div  class="el-form-item">
         <label for="flashOrderOvertime" class="el-form-item__label" style="width: 150px;">秒杀订单超过：</label>
