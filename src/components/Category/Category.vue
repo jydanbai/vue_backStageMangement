@@ -24,20 +24,21 @@
               <i class="iconfont icon-shangpin"></i>
               <span>商品管理</span>
             </template>
-            <el-menu-item
-              index="2-1"
-              :class="{active:$route.path ==='/add'}"
-              @click="goPath('/add')"
-            >
-              <i class="iconfont icon-liebiao"></i>
-              商品列表
-            </el-menu-item>
+           
             <el-menu-item
               index="2-2"
               :class="{active:$route.path ==='/list'}"
               @click="goPath('/list')"
             >
-              <i class="iconfont icon-tianjia"></i>添加商品
+              <i class="iconfont icon-liebiao"></i>商品列表
+            </el-menu-item>
+             <el-menu-item
+              index="2-1"
+              :class="{active:$route.path ==='/add'}"
+              @click="goPath('/add')"
+            >
+              <i class="iconfont icon-tianjia"></i>
+              商品添加
             </el-menu-item>
             <el-menu-item
               index="2-3"
@@ -117,7 +118,7 @@ export default {
     },
     goPath(path) {
       // $router(路由器对象，包含了路由跳转的方法) $route(路由信息对象， 包含当前路由的所有路由信息)
-      this.$route.path !== path && this.$router.push(path);
+      this.$route.path !== path && this.$router.replace(path);
       // this.titles= this.titles.push(this.title)
       // console.log(this.titles)
     }

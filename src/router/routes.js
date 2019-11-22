@@ -55,7 +55,7 @@ export default [
         path: '/add',
         component: Add,
         meta:{
-          title:'添加商品',
+          title:'商品添加',
           isShowCategory:true
         },
       },

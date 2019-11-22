@@ -308,7 +308,7 @@
     </div>
 
     <!-- 点击SKU弹出的页面 -->
-    <div class="yqq-sku">
+    <!-- <div class="yqq-sku">
       <div class="yqq-sku-shang">
         <span>编辑货品信息</span>
         <span class="el-icon-close"></span>
@@ -317,7 +317,7 @@
         <div>商品货号：888888</div>
         <el-input placeholder="请输入内容" clearable></el-input>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
