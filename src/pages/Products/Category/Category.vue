@@ -14,6 +14,7 @@
         </button>
       </div>
     </el-card>
+    <!-- 商品分类 -->
     <el-card shadow="never">
       <el-table :data="tableData" border style="width: 100%">
         <el-table-column fixed prop="date" label="编号" width="150"></el-table-column>
@@ -41,6 +42,22 @@
         </el-table-column>
       </el-table>
     </el-card>
+    <!-- 底部分页 -->
+    <div class="yqq-fenlei-fenye"   >
+      <div class="footer-you">
+        <div class="block">
+          <el-pagination
+            @size-change="handleSizeChange"
+            @current-change="handleCurrentChange"
+            :current-page="currentPage4"
+            :page-sizes="[100, 200, 300, 100]"
+            :page-size="100"
+            layout="total, sizes, prev, pager, next, jumper"
+            :total="20"
+          ></el-pagination>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -69,4 +86,8 @@ export default {
 };
 </script>
 
-<style lang='stylus' rel='stylesheet/stylus' scoped></style>
+<style lang='stylus' rel='stylesheet/stylus' scoped>
+  .yqq-fenlei-fenye
+    float right 
+    margin 15px 20px 0 0 
+</style>
