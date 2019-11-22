@@ -38,7 +38,7 @@
         <el-table-column prop="zip" label="联系地址" width="120"></el-table-column>
         <el-table-column label="电子邮箱" width="100"></el-table-column>
         <el-table-column label="创建时间" width="100"></el-table-column>
-        <el-table-column>
+        <el-table-column label="操作">
           <template slot-scope="scope">
             <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
             <el-button type="text" size="small">编辑</el-button>

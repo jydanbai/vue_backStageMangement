@@ -33,7 +33,7 @@
         <el-table-column prop="name" label="角色名" width="150"></el-table-column>
         <el-table-column prop="province" label="操作权限" width="800"></el-table-column>
         
-        <el-table-column>
+        <el-table-column label="操作">
           <template slot-scope="scope">
             <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
             <el-button type="text" size="small">编辑</el-button>
