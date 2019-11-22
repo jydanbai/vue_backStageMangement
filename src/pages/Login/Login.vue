@@ -86,10 +86,7 @@
 </script>
 
 <style lang='stylus' rel='stylesheet/stylus' scoped>
-<<<<<<< HEAD
-
-=======
-#loginContainer
+  #loginContainer
     width 100%
     height 100%
     position absolute
@@ -136,6 +133,5 @@
             height 40px   
             font-size 20px
             margin-left 35px
->>>>>>> aa9244e617cfa7684d2300ccbd35bd054d0b8c9c
  
 </style>

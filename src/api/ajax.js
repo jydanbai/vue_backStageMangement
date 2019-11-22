@@ -8,6 +8,8 @@ import axios from 'axios'
 import qs from 'qs'
 import { Message } from 'element-ui'
 
+
+
 // 添加请求拦截器: 让post请求的请求体格式为urlencoded格式 a=1&b2
 // 在真正发请求前执行
 axios.interceptors.request.use(function (config) {

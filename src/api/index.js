@@ -24,3 +24,8 @@ export const reqProductsList = (pageNum, pageSize) => ajax(BASE + '/products/lis
   }
 })
 
+// 测试mock数据
+export const getShopDatas =()=> ajax({
+    url:'/test'
+})
+

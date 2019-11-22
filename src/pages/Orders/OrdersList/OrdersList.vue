@@ -246,9 +246,6 @@
      <el-button  type="primary" style="margin-left:20px ; margin-top:20px">确定</el-button>
       <div class="block" style="display:inline ; float:right ;margin-top:20px">
     <el-pagination
-      @size-change="handleSizeChange"
-      @current-change="handleCurrentChange"
-      :current-page="currentPage4"
       :page-sizes="[100, 200, 300, 400]"
       :page-size="100"
       layout="total, sizes, prev, pager, next, jumper"
@@ -260,6 +257,8 @@
 </template>
 
 <script type="text/ecmascript-6">
+ import {mapState} from 'vuex'
+ import {test} from '../../../api'
   export default {
   data() {
     return {
@@ -290,7 +289,18 @@
         }
       ]
     };
-  }
+  },
+    //  方法：
+    mounted() {
+      this.$store.dispatch('getShopDatasAction')
+    },
+
+    // 计算属性
+    computed: {
+      ...mapState({
+        shopDatas:state=>state.shop.shopDatas
+      })
+    },
 
 
   }
