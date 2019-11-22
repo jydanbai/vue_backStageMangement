@@ -234,7 +234,29 @@
 
 
     </div>
+     <div class="el-select el-select--small" style="display:inline ; float:left ; margin-top:20px" >
+     <div class="el-input el-input--small el-input--suffix">
+        <input type="text" autocomplete="off" placeholder="批量操作" readonly="readonly" class="el-input__inner">
+         <span class="el-input__suffix"><span class="el-input__suffix-inner">
+             <i class="el-select__caret el-input__icon el-icon-arrow-up"></i>
+        </span>
+        </span> 
+    </div>
+</div>
+     <el-button  type="primary" style="margin-left:20px ; margin-top:20px">确定</el-button>
+      <div class="block" style="display:inline ; float:right ;margin-top:20px">
+    <el-pagination
+      @size-change="handleSizeChange"
+      @current-change="handleCurrentChange"
+      :current-page="currentPage4"
+      :page-sizes="[100, 200, 300, 400]"
+      :page-size="100"
+      layout="total, sizes, prev, pager, next, jumper"
+      :total="400">
+    </el-pagination>
+  </div>
     </el-card>
+
 </template>
 
 <script type="text/ecmascript-6">
@@ -285,5 +307,11 @@
       width 100%
       height 300px
      
- 
+    .el-dropdown-link {
+        cursor: pointer;
+        color: #409EFF;
+     }
+    .el-icon-arrow-down {
+        font-size: 12px;
+      }
 </style>

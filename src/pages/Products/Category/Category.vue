@@ -159,10 +159,6 @@
       layout=" total,sizes,pager, jumper"
       :total="400">
       <!-- 前进后退 -->
- 
-
-
-
     </el-pagination>
   </div>
   </el-card>
