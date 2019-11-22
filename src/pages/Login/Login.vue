@@ -26,6 +26,7 @@
 </template>
 
 <script type="text/ecmascript-6">
+import { Message } from 'element-ui'
    export default {
      data() {
       var validatePass = (rule, value, callback) => {
@@ -70,14 +71,14 @@
        let { pwd,userName} =this.ruleForm
        let result = await this.$API.reqLogin(userName,pwd)
        console.log(result.data)
-       if(result.status ===0 ){
+       if(result.status === 0 ){
          let {user,token} = result.data
          this.$store.dispatch('getLoginInfoAction',{loginInfo:user})
          this.$store.dispatch('getTokenAction',{token:token})
 
          this.$router.replace('/home')
-       }else{
-          Message.error('请求出错:' + error.msg)
+       }else {
+          Message.error(result.msg)
        }
       }
      
