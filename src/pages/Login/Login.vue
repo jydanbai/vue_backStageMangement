@@ -3,14 +3,18 @@
     <div id="container">
       <h2 class="h2">后台管理系统</h2>
       <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
-        <el-form-item  prop="checkPass" class="top-item">
-          <el-input type="text" v-model="ruleForm.checkPass"  placeholder="用户名" >
+        <el-form-item  prop="userName" class="top-item">
+          <el-input type="text" v-model="ruleForm.userName"  placeholder="用户名" >
             <i slot="prefix" class="iconfont icon-icon-user"></i>
           </el-input>
         </el-form-item>
 
         <el-form-item  prop="pass" class="container-item">
-          <el-input type="password" v-model="ruleForm.pass"  placeholder="请输入密码" show-password >
+          <el-input type="password" v-model="ruleForm.pass"  
+          placeholder="请输入密码" show-password 
+          clearable
+          
+          >
             <i slot="prefix" class="iconfont icon-mima"></i>
           </el-input>
         </el-form-item>
@@ -28,8 +32,6 @@
 <script type="text/ecmascript-6">
   export default {
      data() {
-
-    
       var validatePass = (rule, value, callback) => {
         if (value === '') {
           callback('密码必须输入');
@@ -50,20 +52,18 @@
         } else{
           callback()
         }  
-      }
-      
+      }     
       return {
         ruleForm: {
           pass: '',
-          checkPass: '',
-          
+          userName: '',         
         },
         rules: {
           pass: [
             { validator: validatePass, trigger: 'blur' }
           ],          
-          checkPass: [
-            { checkPass: username, trigger: 'blur' }
+          userName: [
+            { validator: username, trigger: 'blur' }
           ]
         }
       };
@@ -80,8 +80,6 @@
         });
       }
     }
-  
-  
   }
 </script>
 
@@ -127,6 +125,8 @@
           margin 10px auto
           .el-input__icon
             margin-top -5px
+          .el-form-item--feedback .el-input__validateIcon
+            display none  
         .btn-item
           .btn
             width 350px
