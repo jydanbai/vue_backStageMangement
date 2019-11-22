@@ -24,6 +24,15 @@ export const reqProductsList = (pageNum, pageSize) => ajax(BASE + '/products/lis
   params: { // 包含所有query参数的对象
     pageNum,
     pageSize
+  },
+  headers:{
+    needToken:true
   }
 })
 
+// 获取用户列表
+export const reqUsers = ()=> ajax(BASE + '/manage/user/list',{
+  headers:{
+    needToken:true
+  }
+})

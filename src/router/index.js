@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import NProgress from 'nprogress'
+// import store from '../store'
+// import NProgress from 'nprogress'
 import routes from './routes'
-// import { getLoginInfoAction } from '../store/actions'
+// import { Message } from 'element-ui'
 // 声明使用扩展库 
 Vue.use(VueRouter)
 
@@ -14,24 +15,19 @@ const router = new VueRouter({
 
 // 注册全局的导航守卫
 // const whiteList = ['/login'] // 不重定向白名单
-// const token=localStorage.getItem('token_key')
+// const token = localStorage.getItem('token_key')
 // router.beforeEach((to,from,next)=>{
 //   NProgress.start()
 //   if (token) {
 //     if (to.path === '/login') {
-//       next({ path: '/' })
+//       next({ path: '/home' })
 //       NProgress.done() // if current page is dashboard will not trigger	afterEach hook, so manually handle it
-//     } else{
-//       if(this.$store.loginInfo.usename){
-//         this.$store.dispatch('getLoginInfoAction').then((res) =>{
-//           next()
-//         }).catch((err)=>{
-//           Message.error(err || 'Verification failed, please login again')
-//            next({ path: '/' })
-//         })
-         
-//       }
+//     }else{
+//       console.log('111')
+//       console.log(token)
+//       console.log(to,from,next)
 //     }
+   
 //   } else {
 //     if (whiteList.indexOf(to.path) !== -1) {
 //       next()

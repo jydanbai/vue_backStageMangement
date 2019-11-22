@@ -6,6 +6,7 @@
 */
 import axios from 'axios'
 import qs from 'qs'
+import router from '../router'
 import { Message } from 'element-ui'
 
 // 添加请求拦截器: 让post请求的请求体格式为urlencoded格式 a=1&b2
@@ -17,7 +18,15 @@ axios.interceptors.request.use(function (config) {
   if (method.toLowerCase() === 'post' && typeof data==='object') {
     config.data = qs.stringify(data) // username=admin&password=admin
   }
-  // 
+  //将token保存到请求头当中 哪些地方需要token则携带token
+  let token = localStorage.getItem('token_key')
+  if (config.headers.needToken) {
+     if(token){
+      config.headers['Authorization'] = 'atguigu_' + token
+     }else{
+         throw new Error('没有token,请先登录')
+     }
+  }
   return config
 })
 
@@ -30,12 +39,35 @@ axios.interceptors.response.use(function (response) {
   
   return response.data // 返回的结果就会交给我们指定的请求响应的回调
   // return response // 返回的结果就会交给我们指定的请求响应的回调
-}, function (error) { // 统一处理所有请求的异常错误
-  Message.error('请求出错 ' + error.message)
-  // return Promise.reject(error);
-  // 返回一个pending状态的promise, 中断promise链
-  return new Promise(() => {})
-});
+}, 
+//function (error) { // 统一处理所有请求的异常错误
+  // Message.error('请求出错 ' + error.message)
+  // // return Promise.reject(error);
+  // // 返回一个pending状态的promise, 中断promise链
+  // return new Promise(() => {})
+  error => {
+        if (!error.message) { //没有发请求
+            Message.alert(error.message)
+            router.currentRoute.path !== '/login' && router.replace('/login')
+        } else {
+            // 有token token过期
+            if (error.response.status === 401) {
+                Message.error('token已过期 请重新登录')
+                // router.currentRoute.path !== '/login' && router.replace('/login')
+            } else if (error.response.status === 404) {
+                //请求404
+                Message.error('请求资源未定位')
+            } else {
+                //其他原因
+                Message.error('请求失败')
+            }
+        }
+        // console.log(error.message)
+        // 中断promise链 保证不会进入下个成功的回调
+        return new Promise(() => { })
+    }
+//}
+);
 
 
 export default axios

@@ -8,7 +8,8 @@ import {
   SAVE_LOGININFO,
   SAVE_TOKEN,
   CLEAR_TOKEN,
-  CLEAR_LOGININFO
+  CLEAR_LOGININFO,
+  SAVE_USERSLIST
 } from './mutation-types'
 
 
@@ -25,6 +26,9 @@ export default {
   },
   clearLoginInfoAction({commit}){
     commit(CLEAR_LOGININFO)
+  },
+  getUsersAction({commit}){
+    commit(SAVE_USERSLIST)
   },
 
 

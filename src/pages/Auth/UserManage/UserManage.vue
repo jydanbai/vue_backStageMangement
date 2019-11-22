@@ -57,6 +57,7 @@
 
 <script>
 export default {
+  
   data() {
     return {
       sizeForm: {
@@ -112,6 +113,11 @@ export default {
     handleClick(row) {
       console.log(row);
     }
+  },
+  async mounted(){
+    let result = await this.$API.reqUsers()
+    console.log(result)
+    this.$store.dispatch('getUsersAction')
   }
 };
 </script>
