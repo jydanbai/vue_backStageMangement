@@ -339,6 +339,7 @@ export default {
       const tianjiashuju = this.form;
       const yuanshuju = this.orderDatas;
       yuanshuju.unshift(tianjiashuju);
+      this.shou1 = false
     }
   },
 
