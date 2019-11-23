@@ -211,7 +211,7 @@
         <!-- 下面的数据列表 -->
         <div id="dataContent" style="margin-top:30px">
           <el-card shadow="never">
-            <el-table border :data="this.orderDatas">
+            <el-table border    :data="this.orderDatas">
               <el-table-column type="selection"></el-table-column>
               <el-table-column label="编号">
                 <template slot-scope="scope">{{ scope.row.id }}</template>
@@ -268,7 +268,7 @@
               <el-table-column label="操作">
                 <template slot-scope="scope">
                   <el-button size="mini">查看</el-button>
-                  <el-button size="mini" type="danger" @click="shanchu"  >删除</el-button>
+                  <el-button size="mini" type="danger"  @click.native.prevent="deleteRow(scope.$index, tableData)"  >删除</el-button>
                 </template>
               </el-table-column>
             </el-table>
@@ -341,11 +341,6 @@ export default {
       yuanshuju.unshift(tianjiashuju);
       this.shou1 = false;
     },
-    shanchu(){
-      const tianjiashuju = this.form;
-      const yuanshuju = this.orderDatas;
-      yuanshuju.delete(tianjiashuju);
-    }
   },
 
   //读取状态数据
