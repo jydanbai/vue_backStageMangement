@@ -33,3 +33,4 @@ export const reqUsers = ()=> ajax(BASE + '/manage/user/list',{
 export const gitOrderDatas =()=> ajax({
   url:'/orderDatas'
 })
+

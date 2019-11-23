@@ -15,6 +15,7 @@ import { mapState } from "vuex";
     // },
     mounted(){
       this.$store.dispatch('gitOrderDatasAction')
+      
     }
   }
 </script>
