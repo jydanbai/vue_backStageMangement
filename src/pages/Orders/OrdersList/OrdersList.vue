@@ -304,12 +304,13 @@
         </div>
       </div>
     </div>
-
     <!-- 点击添加按钮弹出添加订单 -->
     <el-card shadow="never" v-if="shou1" class="yqq-dingdantianjia"  >  
-        lala
+        quanquan
     </el-card>
   </el-card>
+    
+
 </template>
 
 <script type="text/ecmascript-6">
@@ -349,6 +350,11 @@ export default {
   .el-icon-arrow-down {
     font-size: 12px;
   }
-  
+  .yqq-dingdantianjia{
+    width 100%
+    height 100%
+    
+
+  }
 }
 </style>
