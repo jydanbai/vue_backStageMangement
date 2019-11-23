@@ -6,7 +6,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 // 在外面引入的模拟数据的状态
-import shop from './module/shop'
+import orders from './module/orders'
 
 
 import state from './state'
@@ -17,8 +17,8 @@ import getters from './getters'
 Vue.use(Vuex)
 
 export default new Vuex.Store ({
-   module:{
-     shop
+   modules:{
+     orders
    },
 
    state,

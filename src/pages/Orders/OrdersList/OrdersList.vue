@@ -50,10 +50,10 @@
                 </div>
             </div>
             <!-- 订单状态 -->
-            <div data-v-ebcc336a="" class="el-form-item el-form-item--small">
+            <div  class="el-form-item el-form-item--small">
                 <label class="el-form-item__label" style="width: 140px;">订单状态：</label>
                 <div class="el-form-item__content">
-                    <div data-v-ebcc336a="" class="el-select input-width el-select--small">
+                    <div class="el-select input-width el-select--small">
                         <div class="el-input el-input--small el-input--suffix">
                             <input type="text" autocomplete="off" placeholder="全部" readonly="readonly" class="el-input__inner">
                             <span class="el-input__suffix">
@@ -75,10 +75,10 @@
                     </div>
                 </div>
             </div>
-            <div data-v-ebcc336a="" class="el-form-item el-form-item--small">
+            <div  class="el-form-item el-form-item--small">
                 <label class="el-form-item__label" style="width: 140px;">订单分类：</label>
                 <div class="el-form-item__content">
-                    <div data-v-ebcc336a="" class="el-select input-width el-select--small">
+                    <div class="el-select input-width el-select--small">
                         <div class="el-input el-input--small el-input--suffix">
                             <input type="text" autocomplete="off" placeholder="全部" readonly="readonly" class="el-input__inner">
                             <span class="el-input__suffix"><span class="el-input__suffix-inner"><i class="el-select__caret el-input__icon el-icon-arrow-up"></i></span>
@@ -140,34 +140,34 @@
         <!-- 下面的数据列表 -->
       <div id="dataContent" style="margin-top:30px">
       <el-card  shadow="never">
-      <el-table :data="tableData" border>
+      <el-table  border :data="this.orderDatas">
         <el-table-column type="selection"></el-table-column>
         <el-table-column label="编号">
           <template slot-scope="scope">
-            {{ scope.row.bianhao }}
+            {{ scope.row.id }} 
           </template>
         </el-table-column>
         <el-table-column label="订单编号">
-          <!-- <template slot-scope="scope"> -->
-          <el-popover trigger="hover" placement="top">
+          <template slot-scope="scope"> 
+          <el-popover  placement="top">
             <div slot="reference" class="name-wrapper">
-             
+             {{ scope.row.dingdanbianhao}}
             </div>
-          </el-popover>
-          <!-- </template> -->
+          </el-popover> 
+          </template>
         </el-table-column>
         <el-table-column label="提交时间">
           <template slot-scope="scope">
-            <el-popover trigger="hover" placement="top">
+            <el-popover  placement="top">
               <div slot="reference" class="name-wrapper">
-                {{ scope.row.tijiaoshijian }}
+                {{ scope.row.shijian }}
               </div>
             </el-popover>
           </template>
         </el-table-column>
         <el-table-column label="用户账号">
           <template slot-scope="scope">
-            <el-popover trigger="hover" placement="top">
+            <el-popover   placement="top">
               <div slot="reference" class="name-wrapper">
                 {{ scope.row.yonghuzhanghao }}
               </div>
@@ -176,7 +176,7 @@
         </el-table-column>
         <el-table-column label="订单金额">
           <template slot-scope="scope">
-            <el-popover trigger="hover" placement="top">
+            <el-popover   placement="top">
               <div slot="reference" class="name-wrapper">
                 {{ scope.row.dingdanjine }}
               </div>
@@ -185,7 +185,7 @@
         </el-table-column>
         <el-table-column label="支付方式">
           <template slot-scope="scope">
-            <el-popover trigger="hover" placement="top">
+            <el-popover   placement="top">
               <div slot="reference" class="name-wrapper">
                 {{ scope.row.zhifufangshi }}
               </div>
@@ -194,31 +194,23 @@
         </el-table-column>
         <el-table-column label="订单来源">
           <template slot-scope="scope">
-            <el-popover trigger="hover" placement="top">
+            <el-popover   placement="top">
               <div slot="reference" class="name-wrapper">
-                {{ scope.row.name }}
+                {{ scope.row.dingdanlaiyuan }}
               </div>
             </el-popover>
           </template>
         </el-table-column>
         <el-table-column label="订单状态">
           <template slot-scope="scope">
-            <el-popover trigger="hover" placement="top">
+            <el-popover   placement="top">
               <div slot="reference" class="name-wrapper">
-                {{ scope.row.xiaoliang }}
+                {{ scope.row.dingdanzhuangtai }}
               </div>
             </el-popover>
           </template>
         </el-table-column>
-        <el-table-column label="审核状态">
-          <template slot-scope="scope">
-            <el-popover trigger="hover" placement="top">
-              <div slot="reference" class="name-wrapper">
-                {{ scope.row.shenhe.shenhexiangqing }}
-              </div>
-            </el-popover>
-          </template>
-        </el-table-column>
+        
         <el-table-column label="操作">
           <template slot-scope="scope">
             <el-button size="mini">查看</el-button>
@@ -259,48 +251,61 @@
 <script type="text/ecmascript-6">
  import {mapState} from 'vuex'
  import {test} from '../../../api'
+
   export default {
-  data() {
-    return {
-      tableData: [
-        {
-          bianhao: "12",
-          tijiaoshijian: "2019-11-21",
-          yonghuzhanghao:"222222222",
-          dingdanjine:"22222222",
-          zhifufangshi:'222222',
+  // data() {
+  //   return {
+  //     tableData: [
+  //       {
+  //         bianhao: "12",
+  //         tijiaoshijian: "2019-11-21",
+  //         yonghuzhanghao:"222222222",
+  //         dingdanjine:"22222222",
+  //         zhifufangshi:'222222',
 
 
-          jiegeHuohao: {
-            jiage: "￥3788",
-            huohao: "6946605"
-          },
-          biaoqian: {
-            shangjia: "上架:",
-            xinpin: "新品:",
-            tuijian: "推荐:"
-          },
-          paixu: 1000,
-          xiaoliang: 20000,
-          shenhe: {
-            weishenhe: "未审核",
-            shenhexiangqing: "审核详情"
-          }
-        }
-      ]
-    };
-  },
+  //         jiegeHuohao: {
+  //           jiage: "￥3788",
+  //           huohao: "6946605"
+  //         },
+  //         biaoqian: {
+  //           shangjia: "上架:",
+  //           xinpin: "新品:",
+  //           tuijian: "推荐:"
+  //         },
+  //         paixu: 1000,
+  //         xiaoliang: 20000,
+  //         shenhe: {
+  //           weishenhe: "未审核",
+  //           shenhexiangqing: "审核详情"
+  //         }
+  //       }
+  //     ]
+  //   };
+  // },
+
+
+  computed:{
+    ...mapState({
+      orderDatas:state =>state.orders.orderDatas
+    })
+  }
+  
+
+
+
+
     //  方法：
-    mounted() {
-      this.$store.dispatch('getShopDatasAction')
-    },
+    // mounted() {
+    //   this.$store.dispatch('getShopDatasAction')
+    // },
 
     // 计算属性
-    computed: {
-      ...mapState({
-        shopDatas:state=>state.shop.shopDatas
-      })
-    },
+    // computed: {
+    //   ...mapState({
+    //     shopDatas:state=>state.shop.shopDatas
+    //   })
+    // },
 
 
   }

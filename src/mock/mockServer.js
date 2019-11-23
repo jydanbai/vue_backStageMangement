@@ -1,8 +1,19 @@
 import Mock from 'mockjs'
-import datas from './data'
-const baseUrl = '/api'
-console.log(Mock);
+import {info} from './data.json'
 
 
-Mock.mock(`${baseUrl}/test`, {code: 0, data: datas})
-console.log(datas);
+Mock.mock('/test',info)
+//const baseUrl = '/api'
+
+//Mock.mock(`${baseUrl}/orderDatas` ,info )
+ Mock.mock('/orderDatas',info )
+console.log(info);
+console.log(11111);
+
+
+// const baseUrl = '/api'
+// console.log(Mock);
+// Mock.mock(`${baseUrl}/test`, {code: 0, data: datas})
+
+// Mock.mock(`${baseUrl}/test`, {code: 0, data: datas})
+// 
