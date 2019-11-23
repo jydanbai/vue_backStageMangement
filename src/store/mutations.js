@@ -3,7 +3,15 @@
  */
 
  
- import { SAVE_PRODUCTSLIST,SAVE_LOGININFO ,SAVE_TOKEN,CLEAR_TOKEN,CLEAR_LOGININFO,SAVE_USERSLIST} from './mutation-types'
+ import { 
+   SAVE_PRODUCTSLIST,
+   SAVE_LOGININFO ,
+   SAVE_TOKEN,
+   CLEAR_TOKEN,
+   CLEAR_LOGININFO,
+   SAVE_USERSLIST
+  } 
+  from './mutation-types'
 export default {
 
   // 获取登录信息的mutation
