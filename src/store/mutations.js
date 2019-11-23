@@ -4,12 +4,12 @@
 
  
  import { 
-   SAVE_PRODUCTSLIST,
    SAVE_LOGININFO ,
    SAVE_TOKEN,
    CLEAR_TOKEN,
    CLEAR_LOGININFO,
-   SAVE_USERSLIST
+   SAVE_USERSLIST,
+   SAVE_PRODUCTSLIST,
   } 
   from './mutation-types'
 export default {
@@ -33,17 +33,6 @@ export default {
     [SAVE_USERSLIST](state,{usersList}){
       state.usersList =usersList
     },
-
-
-
-
-
-
-
-
-
-
-
     [SAVE_PRODUCTSLIST](state,{productsList}){
       state.productsList=productsList
     }
