@@ -42,8 +42,3 @@ export const gitOrderDatas =()=> ajax({
   url:'/orderDatas'
 })
 
-// mock数据-添加订单列表
-
-export const gitOrderDatastianjia =()=> ajax({
-  url:'/orderDatastianjia'
-})

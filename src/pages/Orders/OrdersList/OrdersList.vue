@@ -278,30 +278,30 @@
     </el-card>
     <!-- 点击添加按钮弹出添加订单 -->
     <el-card shadow="never" v-if="shou1" class="yqq-dingdantianjia">
-      <el-form ref="form" :model="this.orderDatastianjia" label-width="80px" class="yqq-tianjia1">
-        <el-form-item label="id">
-          <el-input v-model="orderDatastianjia.id"></el-input>
+      <el-form ref="form" :model="form" label-width="80px" class="yqq-tianjia1">
+        <el-form-item label="编号">
+          <el-input v-model="form.id"></el-input>
         </el-form-item>
         <el-form-item label="订单编号">
-          <el-input v-model="orderDatastianjia.dingdanbianhao"></el-input>
+          <el-input v-model="form.bianhao"></el-input>
         </el-form-item>
         <el-form-item label="订单时间">
-          <el-input v-model="orderDatastianjia.dingdanjine"></el-input>
+          <el-input v-model="form.shijian"></el-input>
         </el-form-item>
         <el-form-item label="用户账号">
-          <el-input v-model="orderDatastianjia.yonghuzhanghao"></el-input>
+          <el-input v-model="form.zhanghao"></el-input>
         </el-form-item>
         <el-form-item label="订单金额">
-          <el-input v-model="orderDatastianjia.dingdanjine"></el-input>
+          <el-input v-model="form.jine"></el-input>
         </el-form-item>
         <el-form-item label="支付方式">
-          <el-input v-model="orderDatastianjia.zhifufangshi"></el-input>
+          <el-input v-model="form.zhifu"></el-input>
         </el-form-item>
         <el-form-item label="订单来源">
-          <el-input v-model="orderDatastianjia.dingdanlaiyuan"></el-input>
+          <el-input v-model="form.dingdanlaiyuan"></el-input>
         </el-form-item>
         <el-form-item label="订单状态">
-          <el-input v-model="orderDatastianjia.dingdanzhuangtai"></el-input>
+          <el-input v-model="form.dingdanzhuangtai"></el-input>
         </el-form-item>
         <el-form-item>
           <el-button type="primary" @click="onSubmit">立即添加</el-button>
@@ -320,24 +320,35 @@ export default {
   data() {
     return {
       shou1: false,
-     
-    }},
- 
+      form: {
+        id: "",
+        bianhao: "",
+        shijian: "",
+        zhanghao: "",
+        jine: " ",
+        zhifu: " ",
+        dingdanlaiyuan: "",
+        dingdanzhuangtai: ""
+      }
+    };
+  },
+
   methods: {
+    // 点击按钮添加数据
     onSubmit() {
-      console.log("submit!");
-    }},
+      const tianjiashuju = this.form;
+      const yuanshuju = this.orderDatas;
+      yuanshuju.unshift(tianjiashuju);
+    }
+  },
 
   //读取状态数据
   computed: {
     ...mapState({
       orderDatas: state => state.orders.orderDatas
-    }),
-     ...mapState({
-      orderDatastianjia: state => state.orders.orderDatastianjia
-    }),
+    })
   }
-}
+};
 </script>
 
 <style lang='stylus' rel='stylesheet/stylus' scoped>

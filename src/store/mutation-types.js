@@ -13,5 +13,3 @@ export const CLEAR_LOGININFO = 'clear_logininfo'
 export const SAVE_USERSLIST = 'save_userslist'
 
 export const SAVE_ORDERDATAS='save_orderdatas'
-
-export const SAVE_ORDERDATASTIANJIA = 'SAVE_ORDERDATASTIANJIA'
