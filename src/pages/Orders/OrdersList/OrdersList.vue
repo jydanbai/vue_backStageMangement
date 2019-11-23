@@ -268,7 +268,7 @@
               <el-table-column label="操作">
                 <template slot-scope="scope">
                   <el-button size="mini">查看</el-button>
-                  <el-button size="mini" type="danger">删除</el-button>
+                  <el-button size="mini" type="danger" @click="shanchu"  >删除</el-button>
                 </template>
               </el-table-column>
             </el-table>
@@ -339,7 +339,12 @@ export default {
       const tianjiashuju = this.form;
       const yuanshuju = this.orderDatas;
       yuanshuju.unshift(tianjiashuju);
-      this.shou1 = false
+      this.shou1 = false;
+    },
+    shanchu(){
+      const tianjiashuju = this.form;
+      const yuanshuju = this.orderDatas;
+      yuanshuju.delete(tianjiashuju);
     }
   },
 
@@ -353,8 +358,14 @@ export default {
 </script>
 
 <style lang='stylus' rel='stylesheet/stylus' scoped>
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
+}
+
 #orderListContent {
-  position: relative;
+  // position: relative;
   width: 100%;
   height: 100%;
 
@@ -375,7 +386,7 @@ export default {
 }
 
 .yqq-dingdantianjia {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 10;
@@ -384,9 +395,9 @@ export default {
   height: 100%;
 
   .yqq-tianjia1 {
-    width: 40%;
+    width: 30%;
     background: #fff;
-    padding: 20px;
+    padding: 50px 100px;
     margin: 100px auto;
   }
 }
