@@ -22,8 +22,8 @@
       </el-breadcrumb>
       </div>
       <div class="rightNav">
-        <el-menu-item index="3"  @click="logout">
-           <el-button type="text">
+        <el-menu-item index="3" @click="logout">
+           <el-button type="text" >
                <i class="iconfont icon-tuichu1"></i>
            </el-button>
         
