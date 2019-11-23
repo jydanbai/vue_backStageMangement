@@ -203,10 +203,10 @@
     <!-- 商品表格 -->
     <el-card shadow="never">
       <template>
-        <el-table :data="tableData" border style="width: 100%">
+        <el-table :data="this.$store.state.productsList.list" border style="width: 100%">
           <el-table-column fixed type="selection"></el-table-column>
-          <el-table-column label="编号">
-            <template slot-scope="scope">{{ scope.row.name }}</template>
+          <el-table-column label="商品编号" >
+            <template slot-scope="scope">{{scope.row._id}}</template>
           </el-table-column>
           <el-table-column label="商品图片">
             <el-popover trigger="hover" placement="top">
@@ -219,55 +219,38 @@
               </div>
             </el-popover>
           </el-table-column>
-          <el-table-column label="商品名称">
+          <el-table-column prop="name" label="商品名称" width="200">
             <template slot-scope="scope">
-              <div slot="reference" class="name-wrapper">{{ scope.row.shangpinmingcheng }}</div>
+              <div slot="reference" class="name-wrapper">{{scope.row.name}}</div>
             </template>
           </el-table-column>
-          <el-table-column label="价格/货号">
+          <el-table-column prop="price" label="价格/货号" width="80">
             <template slot-scope="scope">
               <div slot="reference" class="name-wrapper">
-                {{ scope.row.jiegeHuohao.jiage }}
-                <br />
-                {{ scope.row.jiegeHuohao. huohao}}
+                {{scope.row.price}}
               </div>
             </template>
           </el-table-column>
-          <el-table-column label="标签">
+          <el-table-column prop="status" label="标签" width="60">
+            <template slot-scope="scope">
+              {{scope.row.status}}
+            </template>
+          </el-table-column>
+          <el-table-column prop="desc" label="商品描述">
+            <template slot-scope="scope">
+              <div slot="reference" class="name-wrapper">{{scope.row.desc}}</div>
+            </template>
+          </el-table-column>
+         
+          <el-table-column label="销量" width="100">
+            <template slot-scope="scope">
+              <div slot="reference" class="name-wrapper">1</div>
+            </template>
+          </el-table-column>
+          <el-table-column label="商品分类">
             <template slot-scope="scope">
               <div slot="reference" class="name-wrapper">
-                {{ scope.row.biaoqian.shangjia }}
-                <el-switch></el-switch>
-                <br />
-                {{ scope.row.biaoqian.xinpin }}
-                <el-switch></el-switch>
-                <br />
-                {{ scope.row.biaoqian.tuijian }}
-                <el-switch></el-switch>
-              </div>
-            </template>
-          </el-table-column>
-          <el-table-column label="排序">
-            <template slot-scope="scope">
-              <div slot="reference" class="name-wrapper">{{ scope.row.paixu }}</div>
-            </template>
-          </el-table-column>
-          <el-table-column label="SKU库" class="yqq-sku0" >
-            <template slot-scope="scope">
-              <div slot="reference" class="name-wrapper  el-icon-edit yqq-sku1  " @click="SKU"></div>
-            </template>
-          </el-table-column>
-          <el-table-column label="销量">
-            <template slot-scope="scope">
-              <div slot="reference" class="name-wrapper">{{ scope.row.xiaoliang }}</div>
-            </template>
-          </el-table-column>
-          <el-table-column label="审核状态">
-            <template slot-scope="scope">
-              <div slot="reference" class="name-wrapper">
-                {{ scope.row.shenhe.weishenhe }}
-                <br />
-                {{ scope.row.shenhe.shenhexiangqing }}
+                数码产品
               </div>
             </template>
           </el-table-column>
@@ -298,65 +281,66 @@
       <div class="footer-you">
         <div class="block">
           <el-pagination
-            :page-sizes="[100, 200, 300, 100]"
-            :page-size="100"
+            :current-page="pageNum"
+            :page-sizes="[10, 20, 50, 100]"
+            :page-size="pageSize"
             layout="total, sizes, prev, pager, next, jumper"
-            :total="20"
+            :total="totals"
+            :page-count="page"
           ></el-pagination>
         </div>
       </div>
     </div>
 
-    <!-- 点击SKU弹出的页面 -->
-    <!-- <div class="yqq-sku">
-      <div class="yqq-sku-shang">
-        <span>编辑货品信息</span>
-        <span class="el-icon-close"></span>
-      </div>
-      <div>
-        <div>商品货号：888888</div>
-        <el-input placeholder="请输入内容" clearable></el-input>
-      </div>
-    </div> -->
+    
   </div>
 </template>
 
 <script type="text/ecmascript-6">
-// import { mapState } from 'vuex'
+import { mapState } from 'vuex'
 export default {
   data() {
     return {
-      tableData: [
+      test:'',
+      pageNum: 1,
+      pageSize:10,
+      productsDatas:[
         {
-          name: "王小虎",
-          shangpinmingcheng: "华为手机",
-          jiegeHuohao: {
-            jiage: "价格：￥3788",
-            huohao: "货号：6946605"
-          },
-          biaoqian: {
-            shangjia: "上架:",
-            xinpin: "新品:",
-            tuijian: "推荐:"
-          },
-          paixu: 1000,
-          xiaoliang: 20000,
-          shenhe: {
-            weishenhe: "未审核",
-            shenhexiangqing: "审核详情"
-          }
+          _id:'',
+          imgs:[],
+          status:false,
+          name:'',
+          desc:'',
+          price:0,
+          categoryId:'',
         }
       ],
-      test:''
-    };
-  },
-  methods: {
-    SKU() {
-      alert("lqlqlq");
-      // this.$store.dispatch('getProductsListAction')
-      // console.log(this.productsList)
+      totals:0,
+      page:0
+
     }
   },
+  methods: {
+   
+  },
+  mounted(){
+    const pageNum = Number(this.pageNum)
+    const pageSize = this.pageSize
+    // console.log(pageSize)
+    this.$store.dispatch('getProductsListAction',{pageNum,pageSize})
+    this.productsDatas = this.productsData
+    console.log(this.productsData)
+    console.log(this.productsDatas)
+    this.page = this.pages
+    this.totals = this.total
+  },
+  computed: {
+    ...mapState({
+      productsData: state => state.productsList.list,
+      pages:state => state.productsList.pages,
+      total:state => state.productsList.total,
+    })
+  }
   // computed:{
   //   ...mapState({
   //     productsList: state => state.productsList

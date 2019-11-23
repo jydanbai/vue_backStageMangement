@@ -25,17 +25,6 @@ export default {
     [SAVE_USERSLIST](state,{usersList}){
       state.usersList =usersList
     },
-
-
-
-
-
-
-
-
-
-
-
     [SAVE_PRODUCTSLIST](state,{productsList}){
       state.productsList=productsList
     }

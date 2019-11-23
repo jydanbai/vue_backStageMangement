@@ -5,7 +5,7 @@
 export default {
    loginInfo:{ },
    token:'',
-   productsList:[],
+   productsList:{},
    usersList:[]
 
 }

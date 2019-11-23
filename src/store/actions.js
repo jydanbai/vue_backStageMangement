@@ -30,27 +30,11 @@ export default {
   getUsersAction({commit}){
     commit(SAVE_USERSLIST)
   },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    async getProductsListAction({commit,state}){
-      let result = await reqProductsList(1,2)
-      if(result.status===0){
-        commit(SAVE_PRODUCTSLIST,{productsList:result.data})
-      }
-      console.log(result)
+  async getProductsListAction({commit},{pageNum,pageSize}){
+    let result = await reqProductsList(pageNum,pageSize)
+    if(result.status===0){
+      commit(SAVE_PRODUCTSLIST,{productsList:result.data})
     }
+    console.log(result)
+  }
 }
