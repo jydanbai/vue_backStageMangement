@@ -36,3 +36,8 @@ export const reqUsers = ()=> ajax(BASE + '/manage/user/list',{
     needToken:true
   }
 })
+
+//mock数据- 订单列表
+export const gitOrderDatas =()=> ajax({
+  url:'/orderDatas'
+})
