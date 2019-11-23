@@ -55,7 +55,7 @@ export default {
   },
   methods: {
     handleSelect(key, keyPath) {
-      console.log(key, keyPath)
+      // console.log(key, keyPath)
     },
      logout() {
         this.$confirm('确认退出登录吗', {
@@ -82,7 +82,7 @@ export default {
       if(sessionStorage.getItem('loginInfo')){
         // 之前有值
         let loginInfo = JSON.parse(sessionStorage.getItem('loginInfo'))
-          console.log(this.loginInfo)
+          // console.log(this.loginInfo)
         this.username=loginInfo.username
        //将获取的值存入store中
        this.$store.commit(SAVE_LOGININFO,{loginInfo})
