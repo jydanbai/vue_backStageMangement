@@ -44,11 +44,13 @@
 
 <script>
 import { mapState } from 'vuex'
+import { SAVE_LOGININFO} from '../../store/mutation-types'
 export default {
   data() {
     return {
       activeIndex: "1",
       activeIndex2: "1",
+      username:''
     };
   },
   methods: {
@@ -71,11 +73,31 @@ export default {
     },
    computed:{
      ...mapState({
-       username:state =>state.loginInfo.username
+       loginInfo:state =>state.loginInfo
      })
+     
    },
    mounted(){
-    console.log( this.username)
+      // 读取sessionStorage中是否有之前存储的数据
+      if(sessionStorage.getItem('loginInfo')){
+        // 之前有值
+        let loginInfo = JSON.parse(sessionStorage.getItem('loginInfo'))
+          console.log(this.loginInfo)
+        this.username=loginInfo.username
+       //将获取的值存入store中
+       this.$store.commit(SAVE_LOGININFO,{loginInfo})
+      }else{
+        // 之前没有值
+        // this.$store.dispatch('getLoginInfoAction',{loginInfo})
+      }
+      window.addEventListener('beforeunload',()=>{
+        
+         sessionStorage.setItem('loginInfo',JSON.stringify(this.loginInfo) )
+      })
+    
+   },
+   beforeDestroy(){
+      sessionStorage.setItem('loginInfo',JSON.stringify(this.loginInfo))
    }
 };
 </script>
