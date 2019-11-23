@@ -10,7 +10,7 @@ Vue.config.productionTip = false
 Vue.prototype.$API = API
 
 router.beforeEach((to,from,next)=>{
-    const token = localStorage.getItem('token_key')
+const token = localStorage.getItem('token_key')
 if(token){
     next()
 }else{
