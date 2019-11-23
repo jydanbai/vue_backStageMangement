@@ -4,14 +4,34 @@ import App from './App.vue'
 import Element from 'element-ui'
 import router from './router'
 import store from './store'
+import mock from "./mock/mock.serve";
 import 'element-ui/lib/theme-chalk/index.css'
 import * as API from './api'
+<<<<<<< HEAD
     
 //  引入mock
 import './mock/mockServer'
 
+=======
+  
+>>>>>>> dc87b7a285ace2324032461d10493092e08c8059
 Vue.config.productionTip = false
 Vue.prototype.$API = API
+
+router.beforeEach((to,from,next)=>{
+const token = localStorage.getItem('token_key')
+if(token){
+    next()
+}else{
+    if(to.path =='/login'){
+        next()
+    }else{
+        next('/login')
+    }
+}
+})
+
+
 Vue.use(Element)
 // 注册全局组件
 

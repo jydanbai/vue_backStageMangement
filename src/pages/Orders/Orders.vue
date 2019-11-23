@@ -9,10 +9,10 @@
 import { gitOrderDatas } from "../../api";
 import { mapState } from "vuex";
   export default {
-    async mounted(){
-      let resut = await gitOrderDatas()
-      console.log(resut,'JJSJSJSJS')
-    },
+    // async mounted(){
+    //   let resut = await gitOrderDatas()
+    //   console.log(resut,'JJSJSJSJS')
+    // },
     mounted(){
       this.$store.dispatch('gitOrderDatasAction')
     }
