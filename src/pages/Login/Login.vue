@@ -1,35 +1,34 @@
 <template>
   <div id="loginContainer">
     <div id="container">
-      <h2 class="h2">后台管理系统</h2>
-      <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
-        <el-form-item  prop="checkPass" class="top-item">
-          <el-input type="text" v-model="ruleForm.checkPass"  placeholder="用户名" >
+      <h2 class="title">后台管理系统</h2>
+      <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm"  class="demo-ruleForm">
+        <el-form-item  prop="userName" class="top-item">
+          <el-input type="text" v-model="ruleForm.userName"  placeholder="用户名" class="inputWidth">
             <i slot="prefix" class="iconfont icon-icon-user"></i>
           </el-input>
         </el-form-item>
 
-        <el-form-item  prop="pass" class="container-item">
-          <el-input type="password" v-model="ruleForm.pass"  placeholder="请输入密码" show-password >
+        <el-form-item  prop="pwd" class="container-item">
+          <el-input type="password" v-model="ruleForm.pwd" @keyup.enter.native="login" placeholder="请输入密码" show-password class="inputWidth">
             <i slot="prefix" class="iconfont icon-mima"></i>
           </el-input>
         </el-form-item>
                
         <el-form-item class="btn-item">
-          <el-button type="primary" @click="submitForm('ruleForm')" class="btn">登录</el-button>
+          <el-button type="primary" @click="login" class="loginBtn">登录</el-button>
           
         </el-form-item>
       </el-form>
     </div>
-      
+    
   </div>
 </template>
 
 <script type="text/ecmascript-6">
-  export default {
+import { Message } from 'element-ui'
+   export default {
      data() {
-
-    
       var validatePass = (rule, value, callback) => {
         if (value === '') {
           callback('密码必须输入');
@@ -50,88 +49,66 @@
         } else{
           callback()
         }  
-      }
-      
+      }     
       return {
         ruleForm: {
-          pass: '',
-          checkPass: '',
-          
+          pwd: '',
+          userName: '',         
         },
         rules: {
-          pass: [
+          pwd: [
             { validator: validatePass, trigger: 'blur' }
           ],          
-          checkPass: [
-            { checkPass: username, trigger: 'blur' }
+          userName: [
+            { validator: username, trigger: 'blur' }
           ]
-        }
+        },
+       
       };
     },
     methods: {
-      submitForm(formName) {
-        this.$refs[formName].validate((valid) => {
-          if (valid) {
-            alert('submit!');
-          } else {
-            console.log('error submit!!');
-            return false;
-          }
-        });
+     async login(){
+       let { pwd,userName} =this.ruleForm
+       let result = await this.$API.reqLogin(userName,pwd)
+       console.log(result.data)
+       if(result.status === 0 ){
+         let {user,token} = result.data
+         this.$store.dispatch('getLoginInfoAction',{loginInfo:user})
+         this.$store.dispatch('getTokenAction',{token:token})
+
+         this.$router.replace('/home')
+       }else {
+          Message.error(result.msg)
+       }
       }
+     
+
     }
-  
-  
   }
 </script>
 
 <style lang='stylus' rel='stylesheet/stylus' scoped>
 #loginContainer
-    width 100%
-    height 100%
-    position absolute
+    width 100vw
+    height 100vh
     background #304156
     margin-left -200px
+    display flex
+    flex-direction column
+    justify-content center
+    align-items center
     #container
-      width 520px
-      height 396px
-      display flex
-      flex-direction column
-      
-      position absolute
-      left 0
-      right 0
-      top 0
-      bottom 0
-      margin auto 
-      .h2
+      .title
+        height 60px
+        line-height 60px
+        text-align center
+        font-size 30px
         color white
-        text-align  center
-        width 450px
-        height 35px
-        margin-left 10px
-        margin 10px auto
-        font-size 24px
-      .demo-ruleForm  
-        display flex
-        flex-direction column
-        .top-item
-          width 450px
-          height 54px
-          margin 10px auto
-          .el-input__icon
-            margin-top -5px
-        .container-item 
-          width 450px
-          height 54px
-          margin 10px auto
-          .el-input__icon
-            margin-top -5px
-        .btn-item
-          .btn
-            width 350px
-            height 40px   
-            font-size 20px
-            margin-left 35px
+        margin-bottom 20px
+      .inputWidth
+        width 350px
+        margin-bottom 10px
+      .loginBtn
+        width 350px
  
 </style>

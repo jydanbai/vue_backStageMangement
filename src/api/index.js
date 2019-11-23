@@ -4,11 +4,14 @@
 */
 import ajax from './ajax'
 
-// const BASE = 'http://localhost:5000'
-const BASE = process.env.NODE_ENV === 'production' ? '/api' : ''
+// const BASE = 'http://192.168.12.60:4000'
+// const BASE = process.env.NODE_ENV === 'production' ? '/api' : ''
+const BASE = '/api'
 
 // 请求登陆
-// export const reqLogin = (username, password) =>  ajax.post(BASE + '/login', {username, password})
+export const reqLogin = (username, password) =>  ajax.post(BASE + '/login', {username, password})
+
+// 自动登录
 
 
 
@@ -21,14 +24,15 @@ export const reqProductsList = (pageNum, pageSize) => ajax(BASE + '/products/lis
   params: { // 包含所有query参数的对象
     pageNum,
     pageSize
+  },
+  headers:{
+    needToken:true
   }
 })
-//测试mock
-// export const text = ()=>ajax({
-//   url:'/test'
-// })
 
-//
-export const gitOrderDatas = ()=>ajax({
-  url:'/orderDatas'
+// 获取用户列表
+export const reqUsers = ()=> ajax(BASE + '/manage/user/list',{
+  headers:{
+    needToken:true
+  }
 })

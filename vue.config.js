@@ -5,5 +5,17 @@ module.exports = {
 
   // 关闭ESLint编译
   lintOnSave: false,
+  devServer: {
+    proxy: {
+      '/api': {
+        target: 'http://192.168.12.51:4000',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': ''
+        }
+      }
+    }
+  },
+  
  
 } 
