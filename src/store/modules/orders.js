@@ -2,7 +2,7 @@
 import { gitOrderDatas } from "../../api";
 import { SAVE_ORDERDATAS } from "../mutation-types";
 const state= {
-  orderDatas:[]   //初始化数据
+  orderDatas:[]  //初始化数据
 }
 
 
