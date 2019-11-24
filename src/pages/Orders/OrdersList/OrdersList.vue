@@ -274,7 +274,7 @@
               <el-table-column label="操作">
                 <template slot-scope="scope">
                   <el-button size="mini">查看</el-button>
-                  <el-button size="mini" type="danger"  @click="handleDelete(scope.$index, scope.row)"  >删除</el-button>
+                  <el-button size="mini" type="danger"  @click="deleteOrder( scope.row.id)"  >删除</el-button>
                 </template>
               </el-table-column>
             </el-table>
@@ -321,6 +321,7 @@
 <script type="text/ecmascript-6">
 import { mapState } from "vuex";
 import { test } from "../../../api";
+import {DELETE_ORDERDATA } from '../../../store/mutation-types'
 
 export default {
   data() {
@@ -350,11 +351,15 @@ export default {
    guanbizhezhao(){
       this.shou1 = true;
    },
-    handleDelete(index, row) {
-      console.log(index, row)
-        if(row.id == this.orderDatas.id ){
-           this.orderDatas.id = ''
-        }
+    deleteOrder(id) {
+     this.$confirm('确认删除吗', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning',
+          center: true
+        }).then(() => {
+            this.$store.commit(DELETE_ORDERDATA,{id})
+        })
       }
   },
 
