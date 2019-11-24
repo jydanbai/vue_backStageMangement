@@ -267,7 +267,7 @@
               <el-table-column label="操作">
                 <template slot-scope="scope">
                   <el-button size="mini">查看</el-button>
-                  <el-button size="mini" type="danger"  @click.native.prevent="deleteRow(scope.$index, tableData)"  >删除</el-button>
+                  <el-button size="mini" type="danger"  @click="deleteOrder(scope.row.id)" >删除</el-button>
                 </template>
               </el-table-column>
             </el-table>
@@ -319,9 +319,6 @@
     <template >
       <div class="red"  style="float:right">
        <el-pagination
-          @size-change="handleSizeChange"
-          @current-change="handleCurrentChange"
-          :current-page="currentPage4"
           :page-sizes="[100, 200, 300, 400]"
           :page-size="100"
            layout="total, sizes, prev, pager, next, jumper"
@@ -334,6 +331,7 @@
 </template>
 
 <script type="text/ecmascript-6">
+import {DELETE_ORDERDATA} from '../../../store/mutation-types'
 import { mapState } from "vuex";
 import { test } from "../../../api";
 
@@ -371,16 +369,23 @@ export default {
     })
   },
   methods: {
-      handleDelete(id){
-         let index = this.orderDatas.findIndex(function(orderDatas){
-           return orderDatas.id ==id
-         })
-         if(index ==-1){
-           return console.log('删除失败')
-         }
-         this.orderDatas.splice(index,1)
-      }
+         deleteOrder(id) {
+        console.log(id);
+        this.$store.commit(DELETE_ORDERDATA,{id})
+      },
 
+
+
+        //  let index = this.orderDatas.findIndex(function(orderDatas){
+        //    return orderDatas.id ==id
+        //    console.log(index,row);
+           
+        //  })
+        //  if(index ==-1){
+        //    return console.log('删除失败')
+        //  }
+        //  this.orderDatas.splice(index,1)
+      }
 
 
       //  async handleDelete(id){
@@ -420,7 +425,7 @@ export default {
         // console.log(this.orderDatas)
         // splice(index, 1);
       // }
-  },
+
 };
 </script>
 

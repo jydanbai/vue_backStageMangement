@@ -37,6 +37,8 @@ export default {
     [SAVE_PRODUCTSLIST](state,{productsList}){
       state.productsList=productsList
     },
+
+    
     
 
 }
