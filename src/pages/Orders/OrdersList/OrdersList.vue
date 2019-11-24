@@ -264,11 +264,10 @@
                 </el-popover>
               </template>
             </el-table-column>
-
             <el-table-column label="操作">
               <template slot-scope="scope">
                 <el-button size="mini">查看</el-button>
-                <el-button size="mini" type="danger">删除</el-button>
+                <el-button @click="handleDelete(scope.$index, scope.row.id)" size="mini" type="danger">删除</el-button>
               </template>
             </el-table-column>
           </el-table>
@@ -319,14 +318,65 @@ import { test } from "../../../api";
 export default {
   data(){
     return{
-        shou1:true
+        shou1:true,
     }
   },
   computed: {
     ...mapState({
       orderDatas: state => state.orders.orderDatas
     })
-  }
+  },
+  methods: {
+      handleDelete(id){
+         let index = this.orderDatas.findIndex(function(orderDatas){
+           return orderDatas.id ==id
+         })
+         if(index ==-1){
+           return console.log('删除失败')
+         }
+         this.orderDatas.splice(index,1)
+      }
+
+
+
+      //  async handleDelete(id){
+      //   // console.log(id);
+      //   const confirmResult = await this.$confirm('此操作将永久删除数据, 是否继续?', '提示', {
+      //     if(orderDatas = this.orderDatas.filter((item)=> (index+1) !== item.id)){
+      //        confirmButtonText: '确定',
+      //     },
+          
+      //     cancelButtonText: '取消',
+      //     type: 'warning'
+      //   }).catch(err => err)
+   
+      //   if(confirmResult !== 'confirm') {
+      //       return this.$message.info('已取消删除')
+      //   }
+
+        // const {data:res} = await this.$http.delete('roles/' + id)
+        // if(res.meta.status !== 200){
+        //     return this.$message.error('删除用户失败')
+        // }
+        // this.$message.success('删除用户成功')
+        // 刷新列表
+        // this.orderDatas()
+    
+        
+
+    //  handleDelete(index, row) {
+      
+        // console.log(index,row);
+        
+        // this.row.$remove(this.row.filter(index => index.orderDatas_id === index))
+        // this.row[index].$remove = ''
+        // row.remote(index)
+        // console.log(this.orderDatas,'1111111')
+        // this.orderDatas = this.orderDatas.filter((item)=> (index+1) !== item.id)
+        // console.log(this.orderDatas)
+        // splice(index, 1);
+      // }
+  },
 };
 </script>
 

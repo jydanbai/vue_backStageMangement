@@ -7,14 +7,14 @@ import store from './store'
 import mock from "./mock/mock.serve";
 import 'element-ui/lib/theme-chalk/index.css'
 import * as API from './api'
-<<<<<<< HEAD
+
     
 //  引入mock
 import './mock/mockServer'
 
-=======
+
   
->>>>>>> dc87b7a285ace2324032461d10493092e08c8059
+
 Vue.config.productionTip = false
 Vue.prototype.$API = API
 

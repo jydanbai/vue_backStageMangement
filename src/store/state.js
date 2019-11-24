@@ -6,6 +6,6 @@ export default {
    loginInfo:{ },
    token:'',
    productsList:[],
-   usersList:[]
+   usersList:[],
 
 }
