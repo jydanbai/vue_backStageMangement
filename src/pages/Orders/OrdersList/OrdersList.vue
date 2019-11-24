@@ -322,11 +322,11 @@ export default {
       shou1: false,
       form: {
         id: "",
-        bianhao: "",
+        dingdanbianhao: "",
         shijian: "",
-        zhanghao: "",
-        jine: " ",
-        zhifu: " ",
+        yonghuzhanghao: "",
+        dingdanjine: " ",
+        zhifufangshi: " ",
         dingdanlaiyuan: "",
         dingdanzhuangtai: ""
       }
