@@ -163,7 +163,7 @@ import Echarts from '../../components/Echarts/Echarts'
             color red
             margin 20px 15px 5px 20px
   .footer  
-    height 550px
+    height 420px
     border 1px solid #eeeeee
     margin 20px auto
     h6
