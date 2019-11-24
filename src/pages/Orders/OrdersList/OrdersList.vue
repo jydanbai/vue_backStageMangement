@@ -211,7 +211,7 @@
         <!-- 下面的数据列表 -->
         <div id="dataContent" style="margin-top:30px">
           <el-card shadow="never">
-            <el-table border    :data="this.orderDatas">
+            <el-table   border    :data="this.orderDatas">
               <el-table-column type="selection"></el-table-column>
               <el-table-column label="编号">
                 <template slot-scope="scope">{{ scope.row.id }}</template>
@@ -283,19 +283,19 @@
           <el-input v-model="form.id"></el-input>
         </el-form-item>
         <el-form-item label="订单编号">
-          <el-input v-model="form.bianhao"></el-input>
+          <el-input v-model="form.dingdanbianhao"></el-input>
         </el-form-item>
         <el-form-item label="订单时间">
           <el-input v-model="form.shijian"></el-input>
         </el-form-item>
         <el-form-item label="用户账号">
-          <el-input v-model="form.zhanghao"></el-input>
+          <el-input v-model="form.yonghuzhanghao"></el-input>
         </el-form-item>
         <el-form-item label="订单金额">
-          <el-input v-model="form.jine"></el-input>
+          <el-input v-model="form.dingdanjine"></el-input>
         </el-form-item>
         <el-form-item label="支付方式">
-          <el-input v-model="form.zhifu"></el-input>
+          <el-input v-model="form.zhifufangshi"></el-input>
         </el-form-item>
         <el-form-item label="订单来源">
           <el-input v-model="form.dingdanlaiyuan"></el-input>
@@ -322,11 +322,11 @@ export default {
       shou1: false,
       form: {
         id: "",
-        bianhao: "",
+        dingdanbianhao: "",
         shijian: "",
-        zhanghao: "",
-        jine: " ",
-        zhifu: " ",
+        yonghuzhanghao: "",
+        dingdanjine: " ",
+        zhifufangshi: " ",
         dingdanlaiyuan: "",
         dingdanzhuangtai: ""
       }
