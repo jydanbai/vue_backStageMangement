@@ -48,12 +48,18 @@
             <span style="margin-left:40px" class="note-margin">自动五星好评</span>
         </div>
     </div>
-    <div class="el-form-item">
+    <div class="el-form-item" style="display:flex">
         <div class="el-form-item__content" style="margin-left: 150px;">
             <button type="button" class="el-button el-button--primary">
               <span>提交</span>
             </button>
         </div>
+        <div class="el-form-item__content" style="margin-left:360px;">
+            <button type="button" class="el-button el-button--primary">
+              <span>取消</span>  
+            </button>
+        </div>
+
     </div>
 </form>
 </el-card>
