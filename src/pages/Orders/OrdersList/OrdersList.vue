@@ -306,9 +306,31 @@
           <el-button type="primary" @click="onSubmit">立即添加</el-button>
           <el-button @click="shou1 = !shou1">取消</el-button>
         </el-form-item>
+        
       </el-form>
+       <!-- 分页 -->
+
+
+   
+
+       
     </el-card>
+
+    <template >
+      <div class="red"  style="float:right">
+       <el-pagination
+          @size-change="handleSizeChange"
+          @current-change="handleCurrentChange"
+          :current-page="currentPage4"
+          :page-sizes="[100, 200, 300, 400]"
+          :page-size="100"
+           layout="total, sizes, prev, pager, next, jumper"
+          :total="400">
+        </el-pagination>
+      </div>
+    </template>
   </div>
+ 
 </template>
 
 <script type="text/ecmascript-6">
