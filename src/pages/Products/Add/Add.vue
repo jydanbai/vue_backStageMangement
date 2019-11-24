@@ -3,10 +3,10 @@
        <el-card shadow="never" class="yqq-tianjiashangpin"  >
       <!-- 步骤条 -->
       <el-steps :active="2" align-center class="yqq-jindutiao"   >
-        <el-step  description="填写商品信息"></el-step>
-        <el-step  description="填写商品信息"></el-step>
-        <el-step  description="填写商品信息"></el-step>
-        <el-step  description="填写商品信息"></el-step>
+        <el-step title="步骤1" description="填写商品信息"></el-step>
+        <el-step title="步骤2" description="填写商品促销"></el-step>
+        <el-step title="步骤3" description="ok!!下一步"></el-step>
+        <el-step title="步骤4" description="恭喜！！已完成"></el-step>
       </el-steps>
       <!--添加商品  -->
       <el-form  label-width="80px">
@@ -90,7 +90,10 @@ export default {
     margin 50px auto
     padding 50px
     .yqq-jindutiao
-      margin-bottom 20px
+      margin-bottom 50px
+      . yqq-jindutia0-yangshi
+        height 50px
+        line-height 50px
     .yqq-xiayibu
       display block
       margin 0 auto
