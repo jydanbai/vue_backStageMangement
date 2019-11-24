@@ -3,8 +3,8 @@
     <div class="header">
       <h6>待处理事务</h6>
       <ul class="H-ul">
-        <li v-for="(item , index) in 12 " :key="index" class="H-li">
-          <span>待付款订单</span>
+        <li v-for="(shopdata , index) in shopdatas " :key="index" class="H-li">
+          <span>{{shopdata.dingdanzhuangtai}}</span>
           <span class="H-r">(10)</span>
         </li>
       </ul>
@@ -39,10 +39,24 @@
 </template>
 
 <script type="text/ecmascript-6">
-
+import {mapState} from 'vuex'
+import Echarts from '../../components/Echarts/Echarts'
   export default {
-   
-  }
+   components:{
+        Echarts
+    },
+    mounted(){
+       this.$store.dispatch('gitOrderDatasAction')
+        
+    }
+   ,
+   computed:{
+     ...mapState({
+       shopdatas:state=>state.orders.orderDatas,
+      
+     })
+    }
+  } 
 </script>
 
 <style lang='stylus' rel='stylesheet/stylus' scoped>

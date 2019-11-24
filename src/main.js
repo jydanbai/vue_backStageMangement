@@ -7,6 +7,11 @@ import mock from "./mock/mock.serve";
 import 'element-ui/lib/theme-chalk/index.css'
 import * as API from './api'
   
+//引入可视化图
+import VCharts from 'v-charts'
+
+Vue.use(VCharts)
+
 Vue.config.productionTip = false
 Vue.prototype.$API = API
 
