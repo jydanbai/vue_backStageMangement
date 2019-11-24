@@ -14,11 +14,6 @@
         <el-breadcrumb separator-class="el-icon-arrow-right" class="bread-style"> 
           <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
           <el-breadcrumb-item  v-if="$route.path!=='/home'">{{$route.meta.title}}</el-breadcrumb-item>
-          <!-- <el-breadcrumb-item>活动列表</el-breadcrumb-item>
-          <el-breadcrumb-item>活动详情</el-breadcrumb-item> -->
-           <!-- 防止面包屑导航出现 首页/首页， v-if="route.name!='home'" -->
-                
-               
       </el-breadcrumb>
       </div>
       <div class="rightNav">
@@ -55,7 +50,6 @@ export default {
   },
   methods: {
     handleSelect(key, keyPath) {
-      // console.log(key, keyPath)
     },
      logout() {
         this.$confirm('确认退出登录吗', {
@@ -67,7 +61,6 @@ export default {
           this.$router.replace('/login')
           this.$store.dispatch('clearTokenAction')
           this.$store.dispatch('clearLoginInfoAction')
-          // localStorage.removeItem('token_key')
         })
       }
     },
