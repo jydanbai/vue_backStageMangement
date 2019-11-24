@@ -209,7 +209,7 @@
               type="button"
               class="el-button el-button--primary el-button--large "
               style="float: right;margin-bottom:20px"
-             
+            @click="shou1 = !shou1"
             >
               添加
             </button>
