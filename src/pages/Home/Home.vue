@@ -6,39 +6,39 @@
       <ul class="H-ul">
         <li class="H-li">
           <span>待发货订单</span>
-          <span class="H-r"></span>
+          <span class="H-r">{{status.unDelivery}}</span>
         </li>
         <li class="H-li">
           <span>待付款订单</span>
-          <span class="H-r">(10)</span>
+          <span class="H-r">{{status.unPay}}</span>
         </li>
         <li class="H-li">
           <span>已发货订单</span>
-          <span class="H-r">(10)</span>
+          <span class="H-r">{{status.deliveried}}</span>
         </li>
         <li class="H-li">
           <span>已完成订单</span>
-          <span class="H-r">(10)</span>
+          <span class="H-r">{{status.finished}}</span>
         </li>
         <li class="H-li">
           <span>新缺货登记</span>
-          <span class="H-r">(10)</span>
+          <span class="H-r">{{status.newlack}}</span>
         </li>
         <li class="H-li">
           <span>待处理退货订单</span>
-          <span class="H-r">(10)</span>
+          <span class="H-r">{{status.waitForSolve}}</span>
         </li>
         <li class="H-li">
           <span>待确认收获订单</span>
-          <span class="H-r">(10)</span>
+          <span class="H-r">{{status.waitForConfirm}}</span>
         </li>
         <li class="H-li">
           <span>待处理退款申请</span>
-          <span class="H-r">(10)</span>
+          <span class="H-r">{{status.waitForRefund}}</span>
         </li>
         <li class="H-li">
           <span>广告位即将到期</span>
-          <span class="H-r">(10)</span>
+          <span class="H-r">{{status.addWillExpire}}</span>
         </li>
       </ul>
     </div>
@@ -46,24 +46,40 @@
       <div class="lfet">
         <h6>商品总览</h6>
         <ul class="C-ul">
-          <li v-for="(item , index) in 4 " :key="index" class="C-li">
+          <li class="C-li">
+            <span class="C-s">已上架</span>
+            <span class="C-r">777</span>
+          </li>
+          <li class="C-li">
             <span class="C-s">已下架</span>
-            <span class="C-r">100</span>
+            <span class="C-r">77</span>
+          </li>
+          <li class="C-li">
+            <span class="C-s">库存紧张</span>
+            <span class="C-r">7</span>
           </li>
         </ul>
       </div>
       <div class="right">
         <h6>用户总览</h6>
         <ul class="R-ul">
-          <li v-for="(item , index) in 4 " :key="index" class="R-li">
+          <li class="R-li">
             <span class="R-s">今日新增</span>
-            <span class="R-r">100</span>
+            <span class="R-r">7</span>
+          </li>
+          <li class="R-li">
+            <span class="R-s">昨日新增</span>
+            <span class="R-r">77</span>
+          </li>
+          <li class="R-li">
+            <span class="R-s">本月新增</span>
+            <span class="R-r">777</span>
           </li>
         </ul>
       </div>
     </div>
     <div class="footer">
-      <h6>表单统计</h6>
+      <h6>订单统计</h6>
       <div>
         <Echarts/>
       </div>
@@ -77,12 +93,17 @@ import Echarts from '../../components/Echarts/Echarts'
   export default {
     data(){
       return{
-        status:[
-            {
-            name:'',
-            number:0
-          }
-        ]
+        status:{
+          unDelivery:0,
+          unPay:0,
+          deliveried:0,
+          finished:0,
+          newlack:0,
+          waitForSolve:0,
+          waitForConfirm:0,
+          waitForRefund:0,
+          addWillExpire:0,
+        }
 
       }
     },
@@ -91,34 +112,23 @@ import Echarts from '../../components/Echarts/Echarts'
     },
     async mounted(){
        await this.$store.dispatch('gitOrderDatasAction')
-        
-        
-        let arrs = this.orderDatas.map(obj => {return obj.dingdanzhuangtai})
-        
-        console.log(this.orderDatas)
-       let arr = this.orderDatas.filter((item,index)=>{
-          return item.dingdanzhuangtai==='待发货' 
-        })
-        console.log(arr)
-        
-      
+        this.status.unDelivery = this.orderDatas.filter((item,index)=>item.dingdanzhuangtai==='待发货订单').length
+        this.status.unPay = this.orderDatas.filter((item,index)=>item.dingdanzhuangtai==='待付款订单').length
+        this.status.deliveried = this.orderDatas.filter((item,index)=>item.dingdanzhuangtai==='已发货订单').length
+        this.status.finished = this.orderDatas.filter((item,index)=>item.dingdanzhuangtai==='已完成订单').length
+        this.status.newlack = this.orderDatas.filter((item,index)=>item.dingdanzhuangtai==='新缺货登记').length
+        this.status.waitForSolve = this.orderDatas.filter((item,index)=>item.dingdanzhuangtai==='待处理退货订单').length
+        this.status.waitForConfirm = this.orderDatas.filter((item,index)=>item.dingdanzhuangtai==='待确认收货订单').length
+        this.status.waitForRefund = this.orderDatas.filter((item,index)=>item.dingdanzhuangtai==='待处理退款申请').length
+        this.status.addWillExpire = this.orderDatas.filter((item,index)=>item.dingdanzhuangtai==='广告位即将到期').length
     }
    ,
    computed:{
      ...mapState({
        orderDatas:state=>state.orders.orderDatas,
-       
      })
     },
-    // methods:{
-      shops(){
-        console.log(this)
-        console.log(this.shopdatas)
-        let arrs = this.shopdatas.map(obj => {return obj.dingdanzhuangtai})
-        
-        console.log(arrs)
-      }
-    // }
+  
     
   } 
 </script>

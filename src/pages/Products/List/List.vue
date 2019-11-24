@@ -190,13 +190,14 @@
       <div class="el-card__body">
         <i class="el-icon-tickets"></i>
         <span>数据列表</span>
-        <button
-          type="button"
-          style="float right"
-          class="el-button btn-add el-button--default el-button--mini"
-        >
-          <span>添加</span>
-        </button>
+         <button
+              type="button"
+              class="el-button el-button--primary el-button--large chaxun"
+              style="float: right;"
+               @click="toAdd"
+            >
+             添加
+            </button>
       </div>
     </el-card>
 
@@ -267,12 +268,12 @@
     <!-- 底部 -->
     <div class="yqq-footer">
       <div class="footer-zuo">
-        <el-select placeholder="请选择" value="1">
-          <el-option value="1">吃饭</el-option>
-          <el-option value="3">睡觉</el-option>
-          <el-option value="4">打豆豆</el-option>
+        <el-select placeholder="批量操作" value="商品上架">
+          <el-option value="1">商品上架</el-option>
+          <el-option value="3">商品下架</el-option>
+          <el-option value="4">设为推荐</el-option>
         </el-select>
-        <el-button type="primary">主要按钮</el-button>
+        <el-button type="primary" style="margin-left:20px">确定</el-button>
       </div>
       <!-- 底部分页 -->
       <div class="footer-you">
@@ -337,12 +338,13 @@ export default {
       pages:state => state.productsList.pages,
       total:state => state.productsList.total,
     })
+  },
+  methods:{
+      toAdd(){
+     this.$router.push('/add')
+   }
   }
-  // computed:{
-  //   ...mapState({
-  //     productsList: state => state.productsList
-  //   })
-  // }
+  
 };
 </script>
 
