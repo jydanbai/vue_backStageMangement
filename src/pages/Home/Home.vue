@@ -32,9 +32,10 @@
     <div class="footer">
       <h6>表单统计</h6>
       <div>
-        
+        <Echarts/>
       </div>
     </div>
+   
   </div>
 </template>
 
@@ -53,8 +54,12 @@ import Echarts from '../../components/Echarts/Echarts'
    computed:{
      ...mapState({
        shopdatas:state=>state.orders.orderDatas,
-      
+        
      })
+    },
+    methods:{
+
+     
     }
   } 
 </script>
@@ -78,10 +83,11 @@ import Echarts from '../../components/Echarts/Echarts'
       height 160px
       display flex
       flex-wrap wrap
+      justify-content space-between
       padding 20px 40px     
       .H-li
         display flex
-        justify-content space-around
+        justify-content space-between
         width 30%
         height 25px
         border-bottom  1px solid #eee
