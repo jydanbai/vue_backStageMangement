@@ -3,8 +3,8 @@
     <div class="header">
       <h6>待处理事务</h6>
       <ul class="H-ul">
-        <li v-for="(item , index) in 12 " :key="index" class="H-li">
-          <span>待付款订单</span>
+        <li v-for="(shopdata , index) in shopdatas " :key="index" class="H-li">
+          <span>{{shopdata.dingdanzhuangtai}}</span>
           <span class="H-r">(10)</span>
         </li>
       </ul>
@@ -32,17 +32,36 @@
     <div class="footer">
       <h6>表单统计</h6>
       <div>
-        
+        <Echarts/>
       </div>
     </div>
+   
   </div>
 </template>
 
 <script type="text/ecmascript-6">
-
+import {mapState} from 'vuex'
+import Echarts from '../../components/Echarts/Echarts'
   export default {
-   
-  }
+   components:{
+        Echarts
+    },
+    mounted(){
+       this.$store.dispatch('gitOrderDatasAction')
+        
+    }
+   ,
+   computed:{
+     ...mapState({
+       shopdatas:state=>state.orders.orderDatas,
+        
+     })
+    },
+    methods:{
+
+     
+    }
+  } 
 </script>
 
 <style lang='stylus' rel='stylesheet/stylus' scoped>
@@ -64,10 +83,11 @@
       height 160px
       display flex
       flex-wrap wrap
+      justify-content space-between
       padding 20px 40px     
       .H-li
         display flex
-        justify-content space-around
+        justify-content space-between
         width 30%
         height 25px
         border-bottom  1px solid #eee
@@ -143,7 +163,7 @@
             color red
             margin 20px 15px 5px 20px
   .footer  
-    height 550px
+    height 420px
     border 1px solid #eeeeee
     margin 20px auto
     h6

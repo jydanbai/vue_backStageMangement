@@ -26,7 +26,7 @@ export default {
   width 100%
 
 .rightContent 
-  width: 100%;
+  width: 87%;
   padding-left 200px
 
 </style>

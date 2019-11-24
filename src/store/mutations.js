@@ -17,7 +17,7 @@ export default {
   // 获取登录信息的mutation
     [SAVE_LOGININFO](state,{loginInfo}){
       state.loginInfo=loginInfo
-      sessionStorage.setItem('loginInfo',JSON.stringify(loginInfo) )
+      localStorage.setItem('loginInfo',JSON.stringify(loginInfo) )
     },
     [SAVE_TOKEN](state,{token}){
       state.token=token

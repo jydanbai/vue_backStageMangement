@@ -127,9 +127,10 @@ export default {
 </script>
 
 <style lang='stylus' rel='stylesheet/stylus' >
-#categoryContainer 
+#categoryContainer
+  position fixed
   .el-menu-vertical-demo:not(.el-menu--collapse) 
-    position: fixed
+    // position: fixed
     width: 200px;
     height: 100vh;
   .btns 
