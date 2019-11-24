@@ -81,9 +81,12 @@ import { Message } from 'element-ui'
           Message.error(result.msg)
        }
       }
-     
-
-    }
+    },
+    // mounted(){
+    //   if(localStorage.getItem('token_key')){
+    //     this.$router.replace('/home')
+    //   }
+    // }
   }
 </script>
 

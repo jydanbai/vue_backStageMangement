@@ -79,9 +79,9 @@ export default {
    },
    mounted(){
       // 读取sessionStorage中是否有之前存储的数据
-      if(sessionStorage.getItem('loginInfo')){
+      if(localStorage.getItem('loginInfo')){
         // 之前有值
-        let loginInfo = JSON.parse(sessionStorage.getItem('loginInfo'))
+        let loginInfo = JSON.parse(localStorage.getItem('loginInfo'))
           // console.log(this.loginInfo)
         this.username=loginInfo.username
        //将获取的值存入store中
@@ -92,12 +92,12 @@ export default {
       }
       window.addEventListener('beforeunload',()=>{
         
-         sessionStorage.setItem('loginInfo',JSON.stringify(this.loginInfo) )
+         localStorage.setItem('loginInfo',JSON.stringify(this.loginInfo) )
       })
     
    },
    beforeDestroy(){
-      sessionStorage.setItem('loginInfo',JSON.stringify(this.loginInfo))
+      localStorage.setItem('loginInfo',JSON.stringify(this.loginInfo))
    }
 };
 </script>
@@ -105,6 +105,7 @@ export default {
 <style lang='stylus' rel='stylesheet/stylus' scoped>
 #headerContainer 
   .el-menu-demo 
+   
     .breadNav
       float left
       margin 22px 0 0 16px
