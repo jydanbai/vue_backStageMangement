@@ -32,16 +32,31 @@
     <div class="footer">
       <h6>表单统计</h6>
       <div>
-        
+        <Echarts/>
       </div>
     </div>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
-
+  import {mapState} from 'vuex'
+  import Echarts from '../../components/Echarts/Echarts'
   export default {
-   
+   components:{
+        Echarts
+    },
+    mounted(){
+       this.$store.dispatch('gitOrderDatasAction')
+        
+    }
+   ,
+   computed:{
+     ...mapState({
+       shopdatas:state=>state.orders.orderDatas,
+      
+     })
+   },
+  
   }
 </script>
 
@@ -67,7 +82,7 @@
       padding 20px 40px     
       .H-li
         display flex
-        justify-content space-around
+        justify-content space-between
         width 30%
         height 25px
         border-bottom  1px solid #eee

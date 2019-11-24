@@ -3,7 +3,12 @@ import App from './App.vue'
 import Element from 'element-ui'
 import router from './router'
 import 'element-ui/lib/theme-chalk/index.css'
-    
+   
+//引入可视化图
+import VCharts from 'v-charts'
+
+Vue.use(VCharts)
+
 Vue.config.productionTip = false
 
 Vue.use(Element)
