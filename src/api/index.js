@@ -11,16 +11,8 @@ const BASE = '/api'
 // 请求登陆
 export const reqLogin = (username, password) =>  ajax.post(BASE + '/login', {username, password})
 
-// 自动登录
-
-
-
-// const persons/personList/personArr = [{}, {}]
-
-
-
 /* 获取商品分页列表 */
-export const reqProductsList = (pageNum, pageSize) => ajax(BASE + '/products/list', {
+export const reqProductsList = (pageNum, pageSize) => ajax(BASE + '/manage/product/list', {
   params: { // 包含所有query参数的对象
     pageNum,
     pageSize
@@ -42,3 +34,11 @@ export const reqUsers = ()=> ajax(BASE + '/manage/user/list',{
   }
 })
 
+<<<<<<< HEAD
+=======
+//mock数据- 订单列表
+export const gitOrderDatas =()=> ajax({
+  url:'/orderDatas'
+})
+
+>>>>>>> 34d8bf51e8c249310043c0e4396d94a2abdc4529

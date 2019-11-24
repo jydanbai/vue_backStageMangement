@@ -21,10 +21,14 @@ export default {
 </script>
 
 <style lang='stylus' rel='stylesheet/stylus' scoped>
-  #app
-    display flex
-  .rightContent
-    width 100%
+#app 
+  display: flex;
+  width 100%
+
+.rightContent 
+  width: 87%;
+  padding-left 200px
+
 </style>
 
 
