@@ -13,7 +13,6 @@
       </el-form>
     </el-card>
     <!-- 商品分类 -->
-
     <el-card shadow="never" class="yqq-shuju-liebiao">
       <el-table :data="tableData" border>
         <el-table-column fixed prop="date" label="编号"></el-table-column>
@@ -41,7 +40,6 @@
         </el-table-column>
       </el-table>
     </el-card>
-
     <!-- 底部分页 -->
     <div class="yqq-fenlei-fenye">
       <div class="footer-you">
@@ -56,8 +54,6 @@
       </div>
     </div>
   </el-card>
-    
-  
 </template>
 
 <script>
