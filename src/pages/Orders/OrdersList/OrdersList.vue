@@ -407,7 +407,7 @@ html, body {
     width: 30%;
     background: #fff;
     padding: 50px 100px;
-    margin: 100px auto;
+    margin: 0 auto;
   }
 }
 </style>
