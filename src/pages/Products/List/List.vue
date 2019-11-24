@@ -254,12 +254,9 @@
               </div>
             </template>
           </el-table-column>
-          <el-table-column fixed="right" label="操作" width="100">
+          <el-table-column fixed="right" label="操作" width="200">
             <template slot-scope="scope">
-              <el-button size="mini">查看</el-button>
               <el-button size="mini">编辑</el-button>
-              <br />
-              <el-button size="mini">日志</el-button>
               <el-button size="mini" type="danger">删除</el-button>
             </template>
           </el-table-column>
