@@ -205,9 +205,15 @@
         <el-card style="margin-top:25px" shadow="never">
           <span class="el-icon-date"></span>
           <span>数据列表</span>
-          <el-button @click="shou1 = !shou1">添加</el-button>
+          <button
+              type="button"
+              class="el-button el-button--primary el-button--large "
+              style="float: right;margin-bottom:20px"
+             
+            >
+              添加
+            </button>
         </el-card>
-
         <!-- 下面的数据列表 -->
         <div id="dataContent" style="margin-top:30px">
           <el-card shadow="never">

@@ -15,24 +15,23 @@
     <!-- 商品分类 -->
     <el-card shadow="never" class="yqq-shuju-liebiao">
       <el-table :data="tableData" border>
-        <el-table-column fixed prop="date" label="编号"></el-table-column>
-        <el-table-column prop="name" label="分类名称"></el-table-column>
-        <el-table-column prop="province" label="级别"></el-table-column>
-        <el-table-column prop="city" label="商品数量"></el-table-column>
-        <el-table-column fixed prop="date" label="导航栏">
+        <el-table-column prop="date" label="编号" width="100"></el-table-column>
+        <el-table-column prop="date" label="导航栏" width="100">
           <el-switch></el-switch>
         </el-table-column>
-        <el-table-column prop="name" label="是否显示">
+        <el-table-column prop="name" label="分类名称" width="200"></el-table-column>
+        <el-table-column prop="province" label="级别" width="150"></el-table-column>
+        <el-table-column prop="city" label="商品数量" width="100"></el-table-column>
+        <el-table-column prop="name" label="是否显示" width="150">
           <el-switch></el-switch>
         </el-table-column>
-        <el-table-column prop="province" label="排序"></el-table-column>
-        <el-table-column label="设置" fixed="right">
-          <template slot-scope="scope" class="yqq-liebiao-shezhi">
+        <el-table-column prop="province" label="排序" width="100"></el-table-column>
+        <el-table-column label="设置" width="150">
+          <template class="yqq-liebiao-shezhi">
             <el-button size="mini">查看下级</el-button>
-            
           </template>
         </el-table-column>
-        <el-table-column fixed="right" label="操作">
+        <el-table-column  label="操作" width="150">
           <template slot-scope="scope">
             <el-button size="mini">编辑</el-button>
             <el-button size="mini" type="danger">删除</el-button>
