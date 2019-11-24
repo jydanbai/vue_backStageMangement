@@ -38,6 +38,5 @@ export default {
     if(result.status===0){
       commit(SAVE_PRODUCTSLIST,{productsList:result.data})
     }
-    console.log(result)
   }
 }

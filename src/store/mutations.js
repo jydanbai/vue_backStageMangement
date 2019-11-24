@@ -10,6 +10,8 @@
    CLEAR_LOGININFO,
    SAVE_USERSLIST,
    SAVE_PRODUCTSLIST,
+   SEARCH_USERS,
+   CLEAR_USERS
   } 
   from './mutation-types'
 export default {
@@ -35,6 +37,14 @@ export default {
     },
     [SAVE_PRODUCTSLIST](state,{productsList}){
       state.productsList=productsList
+    },
+    [SEARCH_USERS](state,{username}){
+      // console.log(state.usersList)
+      let usersArr= state.usersList.users.filter((user,index)=>user.username===username)
+      state.searchUser=usersArr
+    },
+    [CLEAR_USERS](state){
+      state.searchUser=[]
     }
 
 }
