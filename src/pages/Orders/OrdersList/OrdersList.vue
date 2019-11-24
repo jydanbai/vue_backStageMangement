@@ -277,8 +277,8 @@
       </div>
     </el-card>
     <!-- 点击添加按钮弹出添加订单 -->
-    <el-card shadow="never" v-if="shou1" class="yqq-dingdantianjia">
-      <el-form ref="form" :model="form" label-width="80px" class="yqq-tianjia1">
+    <el-card shadow="never" v-if="shou1" class="yqq-dingdantianjia" @click="guanbizhezhao"  >
+      <el-form ref="form" :model="form" label-width="80px" class="yqq-tianjia1"   >  
         <el-form-item label="编号">
           <el-input v-model="form.id"></el-input>
         </el-form-item>
@@ -341,6 +341,9 @@ export default {
       yuanshuju.unshift(tianjiashuju);
       this.shou1 = false;
     },
+   guanbizhezhao(){
+      this.shou1 = true;
+   }
   },
 
   //读取状态数据
@@ -360,7 +363,6 @@ html, body {
 }
 
 #orderListContent {
-  // position: relative;
   width: 100%;
   height: 100%;
 
