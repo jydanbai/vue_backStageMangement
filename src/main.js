@@ -14,13 +14,10 @@ import './mock/mockServer'
 
 
   
-<<<<<<< HEAD
-=======
 //引入可视化图
 import VCharts from 'v-charts'
 
 Vue.use(VCharts)
->>>>>>> 34d8bf51e8c249310043c0e4396d94a2abdc4529
 
 Vue.config.productionTip = false
 Vue.prototype.$API = API

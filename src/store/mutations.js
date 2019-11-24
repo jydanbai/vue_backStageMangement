@@ -33,10 +33,7 @@ export default {
     [SAVE_USERSLIST](state,{usersList}){
       state.usersList =usersList
     },
-<<<<<<< HEAD
 
-=======
->>>>>>> 34d8bf51e8c249310043c0e4396d94a2abdc4529
     [SAVE_PRODUCTSLIST](state,{productsList}){
       state.productsList=productsList
     },

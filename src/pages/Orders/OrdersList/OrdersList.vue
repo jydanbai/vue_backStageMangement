@@ -36,7 +36,7 @@
                         type="text"
                         autocomplete="off"
                         placeholder="订单编号"
-                        class="el-input__inner"
+                         class="el-input__inner" 
                       />
                     </div>
                   </div>
@@ -45,7 +45,7 @@
                 <div class="el-form-item el-form-item--small">
                   <label class="el-form-item__label" style="width: 140px;">收货人：</label>
                   <div class="el-form-item__content">
-                    <div data-v-ebcc336a class="input-width el-input el-input--small">
+                    <div  class="input-width el-input el-input--small">
                       <input
                         type="text"
                         autocomplete="off"
@@ -56,11 +56,10 @@
                   </div>
                 </div>
                 <!-- 提交时间 -->
-                <div data-v-ebcc336a class="el-form-item el-form-item--small">
+                <div class="el-form-item el-form-item--small">
                   <label class="el-form-item__label" style="width: 140px;">提交时间：</label>
                   <div class="el-form-item__content">
                     <div
-                      data-v-ebcc336a
                       class="el-date-editor input-width el-input el-input--small el-input--prefix el-input--suffix el-date-editor--date"
                     >
                       <input
@@ -180,7 +179,7 @@
                         class="el-select-dropdown el-popper"
                         style="display: none; min-width: 203px;"
                       >
-                        <div class="el-scrollbar" style>
+                        <div class="el-scrollbar" >
                           <div
                             class="el-select-dropdown__wrap el-scrollbar__wrap"
                             style="margin-bottom: -17px; margin-right: -17px;"
@@ -203,9 +202,9 @@
 
         <!-- 中间的内容 -->
         <el-card style="margin-top:25px" shadow="never">
-          <span class="el-icon-date"></span>
-          <span>数据列表</span>
-          <el-button @click="shou1 = !shou1">添加</el-button>
+          <span class="el-icon-date"style="font-size:20px"></span>
+          <span style="font-size:20px ;margin-left:20px">数据列表</span>
+          <el-button style="float:right; margin-bottom:15px" type="primary" @click="shou1 = !shou1">添加</el-button>
         </el-card>
 
         <!-- 下面的数据列表 -->

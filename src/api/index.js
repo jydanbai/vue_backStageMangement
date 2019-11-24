@@ -34,11 +34,6 @@ export const reqUsers = ()=> ajax(BASE + '/manage/user/list',{
   }
 })
 
-<<<<<<< HEAD
-=======
-//mock数据- 订单列表
-export const gitOrderDatas =()=> ajax({
-  url:'/orderDatas'
-})
 
->>>>>>> 34d8bf51e8c249310043c0e4396d94a2abdc4529
+
+
