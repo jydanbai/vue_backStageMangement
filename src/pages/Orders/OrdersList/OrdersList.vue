@@ -225,7 +225,7 @@
               <el-table-column label="订单编号">
                 <template slot-scope="scope">
                   <el-popover placement="top">
-                    <div slot="reference" class="name-wrapper">{{ scope.row.dingdanbianhao}}</div>
+                    <div slot="reference" >{{ scope.row.dingdanbianhao}}</div>
                   </el-popover>
                 </template>
               </el-table-column>
@@ -274,7 +274,7 @@
               <el-table-column label="操作">
                 <template slot-scope="scope">
                   <el-button size="mini">查看</el-button>
-                  <el-button size="mini" type="danger"  @click="handleDelete(scope.$index, scope.row)"  >删除</el-button>
+                  <el-button size="mini" type="danger"  @click="handleDelete(scope.row.id)"  >删除</el-button>
                 </template>
               </el-table-column>
             </el-table>
@@ -350,11 +350,9 @@ export default {
    guanbizhezhao(){
       this.shou1 = true;
    },
-    handleDelete(index, row) {
-      console.log(index, row)
-        if(row.id == this.orderDatas.id ){
-           this.orderDatas.id = ''
-        }
+    handleDelete(id) {
+      console.log(id)
+        
       }
   },
 
