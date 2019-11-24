@@ -25,13 +25,13 @@
         <el-table-column prop="name" label="是否显示" width="150">
           <el-switch></el-switch>
         </el-table-column>
-        <el-table-column prop="province" label="排序" width="100"></el-table-column>
+        <el-table-column prop="province" label="排序" width="200"></el-table-column>
         <el-table-column label="设置" width="150">
           <template class="yqq-liebiao-shezhi">
             <el-button size="mini">查看下级</el-button>
           </template>
         </el-table-column>
-        <el-table-column  label="操作" width="150">
+        <el-table-column  fixed="right"  label="操作" width="300">
           <template slot-scope="scope">
             <el-button size="mini">编辑</el-button>
             <el-button size="mini" type="danger">删除</el-button>
