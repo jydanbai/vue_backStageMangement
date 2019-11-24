@@ -2,7 +2,7 @@
   <el-card shadow="never" >
     <!-- 数据列表添加 -->
     <el-card class="searchCard" shadow="never">
-      <el-form ref="form" :model="sizeForm" label-width="100px" size="large">
+      <el-form ref="form"  label-width="100px" size="large">
         <div class="searchHeader">
           <div class="searchIcon">
             <i class="el-icon-tickets"></i>

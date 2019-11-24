@@ -124,10 +124,10 @@ export default {
 
 <style lang='stylus' rel='stylesheet/stylus' >
 #categoryContainer
-  width: 12vw
+  width: 200px
   // position fixed
   .el-menu-vertical-demo:not(.el-menu--collapse) 
-    width 12vw
+    width 200px
     position: fixed
     height: 100vh
   .btns 

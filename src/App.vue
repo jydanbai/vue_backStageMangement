@@ -26,7 +26,7 @@ export default {
   width 100%
 
   .rightContent 
-    width: 87vw
+    width: calc(100% - 200px)
   // padding-left 200px
 </style>
 
