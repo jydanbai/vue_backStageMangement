@@ -95,7 +95,6 @@ import { Message } from 'element-ui'
     width 100vw
     height 100vh
     background #304156
-    margin-left -200px
     display flex
     flex-direction column
     justify-content center

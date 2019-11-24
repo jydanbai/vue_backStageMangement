@@ -1,7 +1,5 @@
 <template>
   <div id="categoryContainer">
-    <el-row>
-      <el-col :span="4">
         <el-menu
           default-active="2"
           class="el-menu-vertical-demo"
@@ -93,8 +91,6 @@
             </el-menu-item-group>
           </el-submenu>
         </el-menu>
-      </el-col>
-    </el-row>routes
   </div>
 </template>
 
@@ -128,11 +124,12 @@ export default {
 
 <style lang='stylus' rel='stylesheet/stylus' >
 #categoryContainer
-  position fixed
+  width: 12vw
+  // position fixed
   .el-menu-vertical-demo:not(.el-menu--collapse) 
-    // position: fixed
-    width: 200px;
-    height: 100vh;
+    width 12vw
+    position: fixed
+    height: 100vh
   .btns 
     position: absolute
     left: 20px;
