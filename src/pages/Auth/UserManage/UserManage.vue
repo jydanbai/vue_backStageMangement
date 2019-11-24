@@ -77,16 +77,7 @@ export default {
         resource: "",
         desc: "",
       },
-      // tableData: [
-      //   {
-      //     username: '',
-      //     password: '',
-      //     auth: "",
-      //     create_time: '',
-      //     zip: 200333
-      //   },
-       
-      // ],
+     
       date: 0,
 
     };
@@ -102,7 +93,6 @@ export default {
   
   mounted(){
     this.$store.dispatch('getUsersAction')
-    // this.tableData=this.users
     this.date=Date.now()-100000000
     
   },

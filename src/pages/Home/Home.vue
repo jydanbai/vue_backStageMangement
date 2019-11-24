@@ -1,10 +1,43 @@
+杨阳 13:45:48
 <template>
   <div id="home">
     <div class="header">
       <h6>待处理事务</h6>
       <ul class="H-ul">
-        <li v-for="(shopdata , index) in shopdatas " :key="index" class="H-li">
-          <span>{{shopdata.dingdanzhuangtai}}</span>
+        <li class="H-li">
+          <span>待发货订单</span>
+          <span class="H-r"></span>
+        </li>
+        <li class="H-li">
+          <span>待付款订单</span>
+          <span class="H-r">(10)</span>
+        </li>
+        <li class="H-li">
+          <span>已发货订单</span>
+          <span class="H-r">(10)</span>
+        </li>
+        <li class="H-li">
+          <span>已完成订单</span>
+          <span class="H-r">(10)</span>
+        </li>
+        <li class="H-li">
+          <span>新缺货登记</span>
+          <span class="H-r">(10)</span>
+        </li>
+        <li class="H-li">
+          <span>待处理退货订单</span>
+          <span class="H-r">(10)</span>
+        </li>
+        <li class="H-li">
+          <span>待确认收获订单</span>
+          <span class="H-r">(10)</span>
+        </li>
+        <li class="H-li">
+          <span>待处理退款申请</span>
+          <span class="H-r">(10)</span>
+        </li>
+        <li class="H-li">
+          <span>广告位即将到期</span>
           <span class="H-r">(10)</span>
         </li>
       </ul>
@@ -35,7 +68,6 @@
         <Echarts/>
       </div>
     </div>
-   
   </div>
 </template>
 
@@ -43,24 +75,51 @@
 import {mapState} from 'vuex'
 import Echarts from '../../components/Echarts/Echarts'
   export default {
-   components:{
-        Echarts
+    data(){
+      return{
+        status:[
+            {
+            name:'',
+            number:0
+          }
+        ]
+
+      }
     },
-    mounted(){
-       this.$store.dispatch('gitOrderDatasAction')
+   components:{
+      Echarts
+    },
+    async mounted(){
+       await this.$store.dispatch('gitOrderDatasAction')
         
+        
+        let arrs = this.orderDatas.map(obj => {return obj.dingdanzhuangtai})
+        
+        console.log(this.orderDatas)
+       let arr = this.orderDatas.filter((item,index)=>{
+          return item.dingdanzhuangtai==='待发货' 
+        })
+        console.log(arr)
+        
+      
     }
    ,
    computed:{
      ...mapState({
-       shopdatas:state=>state.orders.orderDatas,
-        
+       orderDatas:state=>state.orders.orderDatas,
+       
      })
     },
-    methods:{
-
-     
-    }
+    // methods:{
+      shops(){
+        console.log(this)
+        console.log(this.shopdatas)
+        let arrs = this.shopdatas.map(obj => {return obj.dingdanzhuangtai})
+        
+        console.log(arrs)
+      }
+    // }
+    
   } 
 </script>
 
