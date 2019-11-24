@@ -11,9 +11,9 @@
       active-text-color="#64656C"
     >
        <div class="breadNav">
-        <el-breadcrumb separator-class="el-icon-arrow-right">
+        <el-breadcrumb separator-class="el-icon-arrow-right" class="bread-style"> 
           <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-          <el-breadcrumb-item :to="{path:'/'}" v-if="$route.path!=='/home'">{{$route.meta.title}}</el-breadcrumb-item>
+          <el-breadcrumb-item  v-if="$route.path!=='/home'">{{$route.meta.title}}</el-breadcrumb-item>
           <!-- <el-breadcrumb-item>活动列表</el-breadcrumb-item>
           <el-breadcrumb-item>活动详情</el-breadcrumb-item> -->
            <!-- 防止面包屑导航出现 首页/首页， v-if="route.name!='home'" -->
@@ -103,23 +103,29 @@ export default {
 </script>
 
 <style lang='stylus' rel='stylesheet/stylus' scoped>
-#headerContainer 
-  .el-menu-demo 
-   
+#headerContainer
+  .el-menu-demo
     .breadNav
       float left
       margin 22px 0 0 16px
+      .bread-style
+        font-size 18px
+        font-weight bold
     .rightNav
       float right
       display flex
       flex-direction row-reverse
       margin-right 8px
       font-size 16px
+      .icon-tuichu1
+        color #758eb5
+        font-size 20px
+        font-weight bold
       .admin
         margin-right 20px
-
-
-  
+        color #758eb5
+        font-size 20px
+        font-weight bold
 
 </style>
 

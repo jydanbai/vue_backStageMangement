@@ -66,7 +66,7 @@ import Echarts from '../../components/Echarts/Echarts'
 
 <style lang='stylus' rel='stylesheet/stylus' scoped>
 #home
-  width 80%
+  width 88vw
   margin 0 auto 
   .header
     width 100%

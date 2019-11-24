@@ -32,7 +32,7 @@
       <el-table :data="this.$store.state.usersList.roles" border>
         <el-table-column prop="_id" label="角色ID" width="400"></el-table-column>
         <el-table-column prop="name" label="角色名" width="200"></el-table-column>
-        <el-table-column prop="create_time" label="创建时间" width="250">{{create_time|dateFormat}}</el-table-column>
+        <el-table-column prop="create_time" label="创建时间" width="300">{{create_time|dateFormat}}</el-table-column>
         <!-- <el-table-column prop="city" label="联系电话" width="120"></el-table-column>
         <el-table-column prop="address" label="权限" width="300"></el-table-column>
         <el-table-column prop="zip" label="联系地址" width="120"></el-table-column> -->
