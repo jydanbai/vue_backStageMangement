@@ -25,8 +25,8 @@ export default {
   display: flex;
   width 100%
 
-.rightContent 
-  width: 87vw
+  .rightContent 
+    width: 87vw
   // padding-left 200px
 </style>
 
