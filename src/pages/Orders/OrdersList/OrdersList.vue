@@ -218,52 +218,52 @@
           <el-card shadow="never">
             <el-table   border    :data="this.orderDatas">
               <el-table-column type="selection"></el-table-column>
-              <el-table-column label="编号">
+              <el-table-column label="编号" width="50">
                 <template slot-scope="scope">{{ scope.row.id }}</template>
               </el-table-column>
-              <el-table-column label="订单编号">
+              <el-table-column label="订单编号" width="150">
                 <template slot-scope="scope">
                   <el-popover placement="top">
                     <div slot="reference" class="name-wrapper">{{ scope.row.dingdanbianhao}}</div>
                   </el-popover>
                 </template>
               </el-table-column>
-              <el-table-column label="提交时间">
+              <el-table-column label="提交时间" width="150">
                 <template slot-scope="scope">
                   <el-popover placement="top">
                     <div slot="reference" class="name-wrapper">{{ scope.row.shijian }}</div>
                   </el-popover>
                 </template>
               </el-table-column>
-              <el-table-column label="用户账号">
+              <el-table-column label="用户账号" width="100">
                 <template slot-scope="scope">
                   <el-popover placement="top">
                     <div slot="reference" class="name-wrapper">{{ scope.row.yonghuzhanghao }}</div>
                   </el-popover>
                 </template>
               </el-table-column>
-              <el-table-column label="订单金额">
+              <el-table-column label="订单金额" width="100">
                 <template slot-scope="scope">
                   <el-popover placement="top">
                     <div slot="reference" class="name-wrapper">{{ scope.row.dingdanjine }}</div>
                   </el-popover>
                 </template>
               </el-table-column>
-              <el-table-column label="支付方式">
+              <el-table-column label="支付方式" width="150">
                 <template slot-scope="scope">
                   <el-popover placement="top">
                     <div slot="reference" class="name-wrapper">{{ scope.row.zhifufangshi }}</div>
                   </el-popover>
                 </template>
               </el-table-column>
-              <el-table-column label="订单来源">
+              <el-table-column label="订单来源" width="100">
                 <template slot-scope="scope">
                   <el-popover placement="top">
                     <div slot="reference" class="name-wrapper">{{ scope.row.dingdanlaiyuan }}</div>
                   </el-popover>
                 </template>
               </el-table-column>
-              <el-table-column label="订单状态">
+              <el-table-column label="订单状态" width="200">
                 <template slot-scope="scope">
                   <el-popover placement="top">
                     <div slot="reference" class="name-wrapper">{{ scope.row.dingdanzhuangtai }}</div>
@@ -273,7 +273,7 @@
               <el-table-column label="操作">
                 <template slot-scope="scope">
                   <el-button size="mini">查看</el-button>
-                  <el-button size="mini" type="danger"  @click="deleteOrder(scope.row.id)" >删除</el-button>
+                  <el-button size="mini" type="danger"  @click="deleteOrder( scope.row.id)"  >删除</el-button>
                 </template>
               </el-table-column>
             </el-table>
@@ -340,6 +340,7 @@
 import {DELETE_ORDERDATA} from '../../../store/mutation-types'
 import { mapState } from "vuex";
 import { test } from "../../../api";
+import {DELETE_ORDERDATA } from '../../../store/mutation-types'
 
 export default {
   data() {
@@ -369,11 +370,15 @@ export default {
    guanbizhezhao(){
       this.shou1 = true;
    },
-    handleDelete(index, row) {
-      console.log(index, row)
-        if(row.id == this.orderDatas.id ){
-           this.orderDatas.id = ''
-        }
+    deleteOrder(id) {
+     this.$confirm('确认删除吗', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning',
+          center: true
+        }).then(() => {
+            this.$store.commit(DELETE_ORDERDATA,{id})
+        })
       }
   },
 

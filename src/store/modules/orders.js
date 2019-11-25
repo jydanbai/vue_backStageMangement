@@ -5,7 +5,6 @@ const state= {
   orderDatas:[]  //初始化数据
 }
 
-
 const actions= {
   async gitOrderDatasAction({commit}){
     let result = await gitOrderDatas()
@@ -17,6 +16,7 @@ const mutations= {
   [SAVE_ORDERDATAS](state,{orderDatas}){
     state.orderDatas = orderDatas
   },
+
   // [CLEAR_CARTSHOPS](state){
   //  state.orderDatas.some(orderDatas => orderDatas.id = 0)
   //   state.orderDatas = []
@@ -30,13 +30,18 @@ const mutations= {
     
   },
   
+
+  // [DELETE_ORDERDATA](state,{id}){
+  //   let newOrderdatas = state.orderDatas.filter((orderData,index) => orderData.id !== id)
+  //    state.orderDatas = newOrderdatas
+     
+  //  },
+
 }
 
 const getters= {
   
 }
-
-
 
 export default {
   state,

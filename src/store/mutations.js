@@ -50,7 +50,7 @@ export default {
       state.searchUser=usersArr
     },
     [CLEAR_USERS](state){
-      state.searchUser=[]
+      state.searchUser=[ ]
     }
 >>>>>>> afa413218478696e7042b54ba471b975bda03e82
 

@@ -49,9 +49,9 @@
         </div>
     </div>
     <div class="el-form-item" style="display:flex">
-        <div class="el-form-item__content" style="margin-left: 150px; ">
+        <div class="el-form-item__content" style="margin-left: 150px;">
             <button type="button" class="el-button el-button--primary">
-              <span>提交</span>  
+              <span>取消</span>  
             </button>
         </div>
         <div class="el-form-item__content" style="margin-left:360px;">
@@ -59,6 +59,7 @@
               <span>取消</span>  
             </button>
         </div>
+
     </div>
 </form>
 </el-card>
