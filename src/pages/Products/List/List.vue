@@ -214,7 +214,7 @@
               <div slot="reference">
                 <img
                   style="width:100px"
-                  src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180607/5ac1bf58Ndefaac16.jpg"
+                  src="//img12.360buyimg.com/n1/s450x450_jfs/t1/62485/15/15603/86012/5dd277e7E94ec2502/08ae6be191f1a694.jpg"
                   alt
                 />
               </div>

@@ -18,4 +18,6 @@ export const SEARCH_USERS='search_users'
 
 export const CLEAR_USERS='clear_users'
 
+export const DELETE_ORDERDATA='delete_orderdata'
+
 
