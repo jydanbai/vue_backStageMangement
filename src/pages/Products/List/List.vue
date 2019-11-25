@@ -209,7 +209,7 @@
           <el-table-column label="商品编号" width="250">
             <template slot-scope="scope">{{scope.row._id}}</template>
           </el-table-column>
-          <el-table-column label="商品图片">
+          <el-table-column label="商品图片" width="150">
             <el-popover trigger="hover" placement="top">
               <div slot="reference">
                 <img
