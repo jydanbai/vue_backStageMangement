@@ -350,6 +350,7 @@ export default {
       // this.shou1 = false;
       console.log(tianjiashuju)
       this.$store.commit(ADD_ORDERDATA,{tianjiashuju})
+      
     },
    guanbizhezhao(){
       this.shou1 = true;

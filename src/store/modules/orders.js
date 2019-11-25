@@ -25,7 +25,6 @@ const mutations= {
      console.log(tianjiashuju)
     // let new1Orderdatas = state.orderDatas.unshift(tianjiashuju)
     state.orderDatas.unshift(tianjiashuju)
-    //  state.orderDatas = new1Orderdatas
    }
  
 }
