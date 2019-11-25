@@ -217,19 +217,19 @@
         <!-- 下面的数据列表 -->
         <div id="dataContent" style="margin-top:30px">
           <el-card shadow="never">
-            <el-table   border    :data="this.orderDatas">
+            <el-table   border    :data="this.orderDatas" style="width:100%">
               <el-table-column type="selection"></el-table-column>
-              <el-table-column label="编号" width="50">
+              <el-table-column label="编号" width="100">
                 <template slot-scope="scope">{{ scope.row.id }}</template>
               </el-table-column>
-              <el-table-column label="订单编号" width="150">
+              <el-table-column label="订单编号" width="250">
                 <template slot-scope="scope">
                   <el-popover placement="top">
                     <div slot="reference" class="name-wrapper">{{ scope.row.dingdanbianhao}}</div>
                   </el-popover>
                 </template>
               </el-table-column>
-              <el-table-column label="提交时间" width="150">
+              <el-table-column label="提交时间" width="200">
                 <template slot-scope="scope">
                   <el-popover placement="top">
                     <div slot="reference" class="name-wrapper">{{ scope.row.shijian }}</div>
@@ -243,21 +243,21 @@
                   </el-popover>
                 </template>
               </el-table-column>
-              <el-table-column label="订单金额" width="100">
+              <el-table-column label="订单金额" width="150">
                 <template slot-scope="scope">
                   <el-popover placement="top">
                     <div slot="reference" class="name-wrapper">{{ scope.row.dingdanjine }}</div>
                   </el-popover>
                 </template>
               </el-table-column>
-              <el-table-column label="支付方式" width="150">
+              <el-table-column label="支付方式" width="200">
                 <template slot-scope="scope">
                   <el-popover placement="top">
                     <div slot="reference" class="name-wrapper">{{ scope.row.zhifufangshi }}</div>
                   </el-popover>
                 </template>
               </el-table-column>
-              <el-table-column label="订单来源" width="100">
+              <el-table-column label="订单来源" width="200">
                 <template slot-scope="scope">
                   <el-popover placement="top">
                     <div slot="reference" class="name-wrapper">{{ scope.row.dingdanlaiyuan }}</div>
@@ -309,9 +309,9 @@
         <el-form-item label="订单状态">
           <el-input v-model="form.dingdanzhuangtai"></el-input>
         </el-form-item>
-        <el-form-item>
+        <el-form-item >
           <el-button type="primary" @click="onSubmit">立即添加</el-button>
-          <el-button @click="shou1 = !shou1">取消</el-button>
+          <el-button @click="shou1 = !shou1" >取消</el-button>
         </el-form-item>
       </el-form>
     </el-card>

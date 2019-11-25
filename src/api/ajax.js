@@ -47,7 +47,7 @@ axios.interceptors.response.use(function (response) {
   // return new Promise(() => {})
   error => {
         if (!error.message) { //没有发请求
-            Message.alert(error.message)
+            Message.error(error.message)
             router.currentRoute.path !== '/login' && router.replace('/login')
         } else {
             // 有token token过期

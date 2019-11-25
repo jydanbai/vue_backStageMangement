@@ -9,7 +9,7 @@
           </div>
           <div>
             <el-button @click="reset">重置</el-button>
-            <el-button type="primary" @click="onSubmit">查询结果</el-button>
+            <el-button type="primary" @click="onSubmit">查询</el-button>
           </div>
         </div>
         <el-form-item label="用户名称：">
@@ -30,7 +30,7 @@
       </el-form>
     </el-card>
     <el-card class="tableList" shadow="never">
-      <el-table :data="this.$store.state.searchUser.length>0?this.$store.state.searchUser:this.$store.state.usersList.users" border >
+      <el-table :data="this.$store.state.searchUser.length>0?this.$store.state.searchUser:this.$store.state.usersList.users" border style="width:100%">
         <el-table-column prop="username" label="用户名" width="300"></el-table-column>
         <el-table-column prop="password" label="密码" width="300"></el-table-column>
         <el-table-column prop="auth" label="操作权限" width="400">管理员</el-table-column>
@@ -47,10 +47,10 @@
     <div class="footer-you">
       <div class="block">
         <el-pagination
-          :page-sizes="[100, 200, 300, 100]"
-          :page-size="100"
+          :page-sizes="[1, 2, 3, 4]"
+          :page-size="10"
           layout="total, sizes, prev, pager, next, jumper"
-          :total="20"
+          :total="100"
         ></el-pagination>
       </div>
     </div>

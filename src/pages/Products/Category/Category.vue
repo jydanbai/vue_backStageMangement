@@ -15,23 +15,23 @@
     <!-- 商品分类 -->
     <el-card shadow="never" class="yqq-shuju-liebiao">
       <el-table :data="tableData" border>
-        <el-table-column prop="date" label="编号" width="100"></el-table-column>
-        <el-table-column prop="date" label="导航栏" width="100">
+        <el-table-column prop="date" label="编号" width="200"></el-table-column>
+        <el-table-column prop="date" label="导航栏" width="200">
           <el-switch></el-switch>
         </el-table-column>
         <el-table-column prop="name" label="分类名称" width="200"></el-table-column>
         <el-table-column prop="province" label="级别" width="150"></el-table-column>
-        <el-table-column prop="city" label="商品数量" width="100"></el-table-column>
+        <el-table-column prop="city" label="商品数量" width="200"></el-table-column>
         <el-table-column prop="name" label="是否显示" width="150">
           <el-switch></el-switch>
         </el-table-column>
-        <el-table-column prop="province" label="排序" width="100"></el-table-column>
+        <el-table-column prop="province" label="排序" width="200"></el-table-column>
         <el-table-column label="设置" width="150">
           <template class="yqq-liebiao-shezhi">
             <el-button size="mini">查看下级</el-button>
           </template>
         </el-table-column>
-        <el-table-column  label="操作">
+        <el-table-column  label="操作" width="200">
           <template slot-scope="scope">
             <el-button size="mini">编辑</el-button>
             <el-button size="mini" type="danger">删除</el-button>
@@ -44,10 +44,10 @@
       <div class="footer-you">
         <div class="block">
           <el-pagination
-            :page-sizes="[100, 200, 300, 100]"
-            :page-size="100"
+            :page-sizes="[1, 2, 3, 4]"
+            :page-size="1"
             layout="total, sizes, prev, pager, next, jumper"
-            :total="20"
+            :total="1"
           ></el-pagination>
         </div>
       </div>
