@@ -91,7 +91,7 @@ export default {
     padding 50px
     .yqq-jindutiao
       margin-bottom 50px
-      . yqq-jindutia0-yangshi
+      .yqq-jindutia0-yangshi
         height 50px
         line-height 50px
     .yqq-xiayibu

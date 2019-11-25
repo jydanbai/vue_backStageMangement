@@ -206,7 +206,7 @@
       <template>
         <el-table :data="this.$store.state.productsList.list" border style="width: 100%">
           <el-table-column fixed type="selection"></el-table-column>
-          <el-table-column label="商品编号" >
+          <el-table-column label="商品编号" width="250">
             <template slot-scope="scope">{{scope.row._id}}</template>
           </el-table-column>
           <el-table-column label="商品图片">
@@ -237,7 +237,7 @@
               {{scope.row.status}}
             </template>
           </el-table-column>
-          <el-table-column prop="desc" label="商品描述">
+          <el-table-column prop="desc" label="商品描述" width="400">
             <template slot-scope="scope">
               <div slot="reference" class="name-wrapper">{{scope.row.desc}}</div>
             </template>
@@ -278,14 +278,12 @@
       <!-- 底部分页 -->
       <div class="footer-you">
         <div class="block">
-          <el-pagination
-            :current-page="pageNum"
-            :page-sizes="[10, 20, 50, 100]"
-            :page-size="pageSize"
-            layout="total, sizes, prev, pager, next, jumper"
-            :total="totals"
-            :page-count="page"
-          ></el-pagination>
+           <el-pagination
+          :page-sizes="[1, 2, 3, 4]"
+          :page-size="7"
+          layout="total, sizes, prev, pager, next, jumper"
+          :total="77"
+        ></el-pagination>
         </div>
       </div>
     </div>

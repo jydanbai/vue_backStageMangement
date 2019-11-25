@@ -27,6 +27,7 @@
 
 <script type="text/ecmascript-6">
 import { Message } from 'element-ui'
+import throttle from 'lodash/throttle'
    export default {
      data() {
       var validatePass = (rule, value, callback) => {
@@ -67,26 +68,21 @@ import { Message } from 'element-ui'
       };
     },
     methods: {
-     async login(){
-       let { pwd,userName} =this.ruleForm
+      login:throttle( async function(){
+        console.log(this.ruleForm)
+      let { pwd,userName} = this.ruleForm
        let result = await this.$API.reqLogin(userName,pwd)
-       console.log(result.data)
        if(result.status === 0 ){
          let {user,token} = result.data
          this.$store.dispatch('getLoginInfoAction',{loginInfo:user})
          this.$store.dispatch('getTokenAction',{token:token})
-
          this.$router.replace('/home')
        }else {
           Message.error(result.msg)
        }
-      }
+      },2000)
     },
-    // mounted(){
-    //   if(localStorage.getItem('token_key')){
-    //     this.$router.replace('/home')
-    //   }
-    // }
+   
   }
 </script>
 

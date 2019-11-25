@@ -29,17 +29,13 @@
       </el-form>
     </el-card>
     <el-card class="tableList" shadow="never">
-      <el-table :data="this.$store.state.usersList.roles" border>
+      <el-table :data="this.$store.state.usersList.roles" border style="width:100%" >
         <el-table-column prop="_id" label="角色ID" width="400"></el-table-column>
         <el-table-column prop="name" label="角色名" width="200"></el-table-column>
-        <el-table-column prop="create_time" label="创建时间" width="300">{{create_time|dateFormat}}</el-table-column>
-        <!-- <el-table-column prop="city" label="联系电话" width="120"></el-table-column>
-        <el-table-column prop="address" label="权限" width="300"></el-table-column>
-        <el-table-column prop="zip" label="联系地址" width="120"></el-table-column> -->
+        <el-table-column prop="create_time" label="创建时间" width="400">{{create_time|dateFormat}}</el-table-column>
         <el-table-column label="电子邮箱" width="400">Kelly@163.com</el-table-column>
-        <!-- <el-table-column label="创建时间" width="100"></el-table-column> -->
-        <el-table-column label="操作" >
-          <template slot-scope="scope">
+        <el-table-column label="操作"  >
+          <template slot-scope="scope"  >
             <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
             <el-button type="text" size="small">编辑</el-button>
           </template>
@@ -49,9 +45,9 @@
     <!-- 底部分页 -->
     <div class="footer-you">
       <div class="block">
-        <el-pagination
-          :page-sizes="[100, 200, 300, 100]"
-          :page-size="100"
+         <el-pagination
+          :page-sizes="[1, 2, 3, 4]"
+          :page-size="9"
           layout="total, sizes, prev, pager, next, jumper"
           :total="20"
         ></el-pagination>
