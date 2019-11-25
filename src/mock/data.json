@@ -10,7 +10,7 @@
         "dingdanjine":"￥18732",
         "zhifufangshi":"支付宝",
         "dingdanlaiyuan":"App订单",
-        "dingdanzhuangtai":"待发货"
+        "dingdanzhuangtai":"待付款订单"
       },
       {
         "id":2,
@@ -20,7 +20,7 @@
         "dingdanjine":"￥18732",
         "zhifufangshi":"支付宝",
         "dingdanlaiyuan":"App订单",
-        "dingdanzhuangtai":"已关闭"
+        "dingdanzhuangtai":"待发货订单"
       },
       
       {
@@ -31,7 +31,7 @@
         "dingdanjine":"￥18732",
         "zhifufangshi":"支付宝",
         "dingdanlaiyuan":"App订单",
-        "dingdanzhuangtai":"待发货"
+        "dingdanzhuangtai":"已发货订单"
       },
       {
         "id":4,
@@ -41,7 +41,7 @@
         "dingdanjine":"￥32",
         "zhifufangshi":"微信",
         "dingdanlaiyuan":"App订单",
-        "dingdanzhuangtai":"待付款订单"
+        "dingdanzhuangtai":"已完成订单"
       },
       {
         "id":5,
@@ -51,7 +51,7 @@
         "dingdanjine":"￥18732",
         "zhifufangshi":"支付宝",
         "dingdanlaiyuan":"App订单",
-        "dingdanzhuangtai":"待发货订单"
+        "dingdanzhuangtai":"新缺货登记"
       },
       {
         "id":6,
@@ -61,7 +61,7 @@
         "dingdanjine":"￥18732",
         "zhifufangshi":"微信",
         "dingdanlaiyuan":"App订单",
-        "dingdanzhuangtai":"已发货订单"
+        "dingdanzhuangtai":"待处理退货订单"
       },
       {
         "id":7,
@@ -71,7 +71,7 @@
         "dingdanjine":"￥18732",
         "zhifufangshi":"支付宝",
         "dingdanlaiyuan":"App订单",
-        "dingdanzhuangtai":"已完成订单"
+        "dingdanzhuangtai":"待确认收货订单"
       },
       {
         "id":8,
@@ -81,7 +81,7 @@
         "dingdanjine":"￥186662",
         "zhifufangshi":"微信",
         "dingdanlaiyuan":"App订单",
-        "dingdanzhuangtai":"新缺货登记"
+        "dingdanzhuangtai":"待处理退款申请"
       },
       {
         "id":9,
@@ -91,7 +91,7 @@
         "dingdanjine":"￥186662",
         "zhifufangshi":"微信",
         "dingdanlaiyuan":"App订单",
-        "dingdanzhuangtai":"待处理退货订单"
+        "dingdanzhuangtai":"广告位即将到期"
       },
       {
         "id":10,
@@ -101,7 +101,7 @@
         "dingdanjine":"￥186662",
         "zhifufangshi":"微信",
         "dingdanlaiyuan":"App订单",
-        "dingdanzhuangtai":"待处理收货订单"
+        "dingdanzhuangtai":"待发货订单"
       },
       {
         "id":11,
@@ -111,7 +111,7 @@
         "dingdanjine":"￥186662",
         "zhifufangshi":"微信",
         "dingdanlaiyuan":"App订单",
-        "dingdanzhuangtai":"待处理退款申请"
+        "dingdanzhuangtai":"新缺货登记"
       },
       {
         "id":12,
@@ -121,11 +121,28 @@
         "dingdanjine":"￥186662",
         "zhifufangshi":"微信",
         "dingdanlaiyuan":"App订单",
-        "dingdanzhuangtai":"广告位即将到期"
+        "dingdanzhuangtai":"已完成订单"
+      },
+      {
+        "id":13,
+        "dingdanbianhao":2018091501010000012,
+        "shijian":"2018-09-15 12:24:27",
+        "yonghuzhanghao":"test",
+        "dingdanjine":"￥186662",
+        "zhifufangshi":"微信",
+        "dingdanlaiyuan":"App订单",
+        "dingdanzhuangtai":"待确认收货订单"
+      },
+      {
+        "id":14,
+        "dingdanbianhao":2018091501010000012,
+        "shijian":"2018-09-15 12:24:27",
+        "yonghuzhanghao":"test",
+        "dingdanjine":"￥186662",
+        "zhifufangshi":"微信",
+        "dingdanlaiyuan":"App订单",
+        "dingdanzhuangtai":"新缺货登记"
       }
-      
-      
-
     ]
 
   }

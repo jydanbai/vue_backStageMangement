@@ -7,6 +7,7 @@ export default {
    token:'',
 
    productsList:{},
-   usersList:[]
+   usersList:[],
+   searchUser:[]
 
 }

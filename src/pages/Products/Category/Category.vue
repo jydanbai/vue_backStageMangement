@@ -1,202 +1,97 @@
 <template>
-  <div>
-    <el-card shadow="never" border>
-
-    <el-card style="margin-top:25px" shadow="never">
-      <span  style="font-size:25px; height:20px; line-height:20px margin-top:15px;  text-align:center ;margin-left:25px ; " class="el-icon-date"></span>
-      <span style="font-size:25px; margin-top:5px; text-align:center ;margin-left:25px">数据列表</span>
-      <el-row>
-      <el-button style="float:right" plain>添加</el-button>
-      </el-row>
-
+  <el-card shadow="never" >
+    <!-- 数据列表添加 -->
+    <el-card class="searchCard" shadow="never">
+      <el-form ref="form"  label-width="100px" size="large">
+        <div class="searchHeader">
+          <div class="searchIcon">
+            <i class="el-icon-tickets"></i>
+            数据列表
+          </div>
+          <el-button type="primary" size="mini">添加</el-button>
+        </div>
+      </el-form>
     </el-card>
-
-    <el-card shadow="never" style="margin-top:30px">
-      <template>
-  <el-table
-    :data="tableData"
-    border
-    style="width: 100%">
-    <el-table-column type="selection"></el-table-column>
-    <!-- 编号 -->
-    <el-table-column
-      label="编号"
-      width="300">
-      <template slot-scope="scope">
-        
-        <!-- <el-popover trigger="hover" placement="top"> -->
-          <!-- <p>姓名: {{ scope.row.bianhao }}</p> -->
-          <div slot="reference" class="name-wrapper">
-            {{ scope.row.bianhao }}
-          </div>
-        </el-popover>
-      </template>
-    </el-table-column>
-
-<!-- 属性名称 -->
-    <el-table-column
-      label="属性名称"
-      width="300">
-      <template slot-scope="scope">
-        
-        <!-- <el-popover trigger="hover" placement="top"> -->
-          <div slot="reference" class="name-wrapper">
-           {{ scope.row.shuxingminigchen }}
-          </div>
-        </el-popover>
-      </template>
-    </el-table-column>
-<!-- 商品数量 -->
-    <el-table-column
-      label="商品数量"
-      width="300">
-      <template slot-scope="scope">
-        
-        <!-- <el-popover trigger="hover" placement="top">
-          <p>姓名: {{ scope.row.name }}</p> -->
-          <div slot="reference" class="name-wrapper">
-           {{ scope.row.shuxingleixing }}
-          </div>
-        </el-popover>
-      </template>
-    </el-table-column>
-<!-- 参数数量 -->
-    <el-table-column
-      label="参数数量"
-      width="300">
-      <template slot-scope="scope">
-        
-        <!-- <el-popover trigger="hover" placement="top">
-          <p>姓名: {{ scope.row.name }}</p> -->
-          <div slot="reference" class="name-wrapper">
-            {{ scope.row.shuxing }}
-          </div>
-        </el-popover>
-      </template>
-    </el-table-column>
-<!-- 设置 -->
-    <el-table-column
-      label="设置"
-      width="300">
-      <template slot-scope="scope">
-        
-        <!-- <el-popover trigger="hover" placement="top">
-          <p>姓名: {{ scope.row.name }}</p> -->
-          <div slot="reference" class="name-wrapper">
-           {{ scope.row.shixingfangshi }}
-          </div>
-        </el-popover>
-      </template>
-    </el-table-column>
-    <!-- 可选值列表
-    <el-table-column
-      label="可选值列表"
-      width="180">
-      <template slot-scope="scope">
-        
-        <el-popover trigger="hover" placement="top">
-          <p>姓名: {{ scope.row.name }}</p>
-          <div slot="reference" class="name-wrapper">
-           {{ scope.row.kexuanzhiliebiao }}
-          </div>
-        </el-popover>
-      </template>
-    </el-table-column> -->
-    <!-- 排序 -->
-    <!-- <el-table-column
-      label="排序"
-      width="180">
-      <template slot-scope="scope">
-        
-        <el-popover trigger="hover" placement="top">
-          <p>姓名: {{ scope.row.name }}</p>
-          <div slot="reference" class="name-wrapper">
-            {{ scope.row.peixu }}
-          </div>
-        </el-popover>
-      </template>
-    </el-table-column> -->
-    <!-- 操作 -->
-    <el-table-column label="操作">
-      <template slot-scope="scope">
-        <el-button
-          size="mini"
-          @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
-        <el-button
-          size="mini"
-          type="danger"
-          @click="handleDelete(scope.$index, scope.row)">删除</el-button>
-      </template>
-    </el-table-column>
-  </el-table>
-</template>
+    <!-- 商品分类 -->
+    <el-card shadow="never" class="yqq-shuju-liebiao">
+      <el-table :data="tableData" border>
+        <el-table-column prop="date" label="编号" width="100"></el-table-column>
+        <el-table-column prop="date" label="导航栏" width="100">
+          <el-switch></el-switch>
+        </el-table-column>
+        <el-table-column prop="name" label="分类名称" width="200"></el-table-column>
+        <el-table-column prop="province" label="级别" width="150"></el-table-column>
+        <el-table-column prop="city" label="商品数量" width="100"></el-table-column>
+        <el-table-column prop="name" label="是否显示" width="150">
+          <el-switch></el-switch>
+        </el-table-column>
+        <el-table-column prop="province" label="排序" width="100"></el-table-column>
+        <el-table-column label="设置" width="150">
+          <template class="yqq-liebiao-shezhi">
+            <el-button size="mini">查看下级</el-button>
+          </template>
+        </el-table-column>
+        <el-table-column  label="操作" width="150">
+          <template slot-scope="scope">
+            <el-button size="mini">编辑</el-button>
+            <el-button size="mini" type="danger">删除</el-button>
+          </template>
+        </el-table-column>
+      </el-table>
     </el-card>
-    
-
-    <!--  -->
-    <div style="margin-top:20px ; display：inline" >
-<el-dropdown>
-  <el-button style="width:200px">
-    更多菜单<i class="el-icon-arrow-down el-icon--right"></i>
-  </el-button>
-  <el-dropdown-menu slot="dropdown">
-    <el-dropdown-item>黄金糕</el-dropdown-item>
-    <el-dropdown-item>狮子头</el-dropdown-item>
-    <el-dropdown-item>螺蛳粉</el-dropdown-item>
-    <el-dropdown-item>双皮奶</el-dropdown-item>
-    <el-dropdown-item>蚵仔煎</el-dropdown-item>
-  </el-dropdown-menu>
-</el-dropdown>
-
-  <el-button  type="primary" style="margin-left:20px">主要按钮</el-button>
+    <!-- 底部分页 -->
+    <div class="yqq-fenlei-fenye">
+      <div class="footer-you">
+        <div class="block">
+          <el-pagination
+            :page-sizes="[100, 200, 300, 100]"
+            :page-size="100"
+            layout="total, sizes, prev, pager, next, jumper"
+            :total="20"
+          ></el-pagination>
+        </div>
+      </div>
     </div>
-    
-    <div class="block" style="display:inline-block ; float:right">
-    <el-pagination
-       background
-      :page-sizes="[100, 200, 300, 400]"
-      :page-size="100"
-      layout=" total,sizes,pager, jumper"
-      :total="400">
-      <!-- 前进后退 -->
-    </el-pagination>
-  </div>
   </el-card>
-  </div>
 </template>
 
 <script>
 export default {
-  data() {
-      return {
-        tableData: [
-          {
-          bianhao: "7",
-          shuxingminigchen:'颜色',
-          shuxingleixing:'服装',
-          shuxing:'2',
-          shixingfangshi:"列表中选取",
-          kexuanzhiliebiao:'黑色，白色' ,
-          peixu:'100'
-         
-        },
-        ]
-      }
-    },
-    methods: {
-      handleEdit(index, row) {
-        console.log(index, row);
-      },
-      handleDelete(index, row) {
-        console.log(index, row);
-      }
+  methods: {
+    handleClick(row) {
+      console.log(row);
     }
-}
-</script>>
+  },
 
-
+  data() {
+    return {
+      tableData: [
+        {
+          date: "1",
+          name: "服装",
+          province: "一级",
+          city: "100",
+          address: "1",
+          zip: 200333
+        }
+      ]
+    };
+  }
+};
+</script>
 
 <style lang='stylus' rel='stylesheet/stylus' scoped>
+.searchCard {
+  margin-bottom: 20px;
 
- 
+  .searchHeader {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.yqq-fenlei-fenye {
+  float: right;
+  margin: 15px 20px 15px 0;
+}
 </style>

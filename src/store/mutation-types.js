@@ -20,4 +20,12 @@ export const SAVE_USERSLIST = 'save_userslist'
 
 export const SAVE_ORDERDATAS='save_orderdatas'
 
+
 export const DELETE_ORDERDATA='delete_orderdata'
+
+export const SEARCH_USERS='search_users'
+
+export const CLEAR_USERS='clear_users'
+
+
+
