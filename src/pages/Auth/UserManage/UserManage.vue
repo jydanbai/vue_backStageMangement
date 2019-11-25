@@ -35,7 +35,7 @@
         <el-table-column prop="password" label="密码" width="300"></el-table-column>
         <el-table-column prop="auth" label="操作权限" width="400">管理员</el-table-column>
         <el-table-column prop="create_time" label="创建时间" width="300" >{{date|dateFormat}}</el-table-column>
-        <el-table-column label="操作" width="150">
+        <el-table-column label="操作" width="150" fixed="right">
           <template slot-scope="scope">
             <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
             <el-button type="text" size="small">编辑</el-button>
