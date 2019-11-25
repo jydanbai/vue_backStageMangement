@@ -311,7 +311,7 @@
         </el-form-item>
         <el-form-item >
           <el-button type="primary" @click="onSubmit">立即添加</el-button>
-          <el-button @click="shou1 = !shou1" >取消</el-button>
+          <el-button @click="cancel" >取消</el-button>
         </el-form-item>
       </el-form>
     </el-card>
@@ -347,13 +347,17 @@ export default {
       // const yuanshuju = this.orderDatas;
       // yuanshuju.unshift(tianjiashuju);
       
-      // this.shou1 = false;
       console.log(tianjiashuju)
       this.$store.commit(ADD_ORDERDATA,{tianjiashuju})
-      
+      this.shou1 = false;
+      this.form = {}
     },
    guanbizhezhao(){
       this.shou1 = true;
+   },
+   cancel(){
+     this.form = {}
+     this.shou1 = false;
    },
     deleteOrder(id) {
      this.$confirm('确认删除吗', {
@@ -363,6 +367,7 @@ export default {
           center: true
         }).then(() => {
             this.$store.commit(DELETE_ORDERDATA,{id})
+            
         })
       }
   },
