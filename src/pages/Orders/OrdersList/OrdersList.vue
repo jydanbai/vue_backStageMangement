@@ -284,7 +284,7 @@
     </el-card>
     <!-- 点击添加按钮弹出添加订单 -->
     <el-card shadow="never" v-if="shou1" class="yqq-dingdantianjia" @click="guanbizhezhao"  >
-      <el-form ref="form" :model="form" label-width="80px" class="yqq-tianjia1"   >  
+      <el-form ref="form" :model='form'  label-width="80px" class="yqq-tianjia1"   >  
         <el-form-item label="编号">
           <el-input v-model="form.id"></el-input>
         </el-form-item>
@@ -303,7 +303,7 @@
         <el-form-item label="支付方式">
           <el-input v-model="form.zhifufangshi"></el-input>
         </el-form-item>
-        <el-form-item label="订单来源">
+        <el-form-item label="订单来源"> 
           <el-input v-model="form.dingdanlaiyuan"></el-input>
         </el-form-item>
         <el-form-item label="订单状态">
@@ -321,7 +321,7 @@
 <script type="text/ecmascript-6">
 import { mapState } from "vuex";
 import { test } from "../../../api";
-import {DELETE_ORDERDATA } from '../../../store/mutation-types'
+import {DELETE_ORDERDATA ,ADD_ORDERDATA} from '../../../store/mutation-types'
 
 export default {
   data() {
@@ -343,10 +343,13 @@ export default {
   methods: {
     // 点击按钮添加数据
     onSubmit() {
-      const tianjiashuju = this.form;
-      const yuanshuju = this.orderDatas;
-      yuanshuju.unshift(tianjiashuju);
-      this.shou1 = false;
+      const tianjiashuju = {...this.form};
+      // const yuanshuju = this.orderDatas;
+      // yuanshuju.unshift(tianjiashuju);
+      
+      // this.shou1 = false;
+      console.log(tianjiashuju)
+      this.$store.commit(ADD_ORDERDATA,{tianjiashuju})
     },
    guanbizhezhao(){
       this.shou1 = true;

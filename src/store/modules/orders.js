@@ -1,6 +1,6 @@
 
 import { gitOrderDatas } from "../../api";
-import { SAVE_ORDERDATAS ,DELETE_ORDERDATA} from "../mutation-types";
+import { SAVE_ORDERDATAS ,DELETE_ORDERDATA,ADD_ORDERDATA} from "../mutation-types";
 const state= {
   orderDatas:[]  //初始化数据
 }
@@ -21,6 +21,12 @@ const mutations= {
      state.orderDatas = newOrderdatas
      
    },
+   [ADD_ORDERDATA](state,{tianjiashuju}){
+     console.log(tianjiashuju)
+    // let new1Orderdatas = state.orderDatas.unshift(tianjiashuju)
+    state.orderDatas.unshift(tianjiashuju)
+    //  state.orderDatas = new1Orderdatas
+   }
  
 }
 

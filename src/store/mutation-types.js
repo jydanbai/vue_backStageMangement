@@ -20,4 +20,6 @@ export const CLEAR_USERS='clear_users'
 
 export const DELETE_ORDERDATA='delete_orderdata'
 
+export const ADD_ORDERDATA = 'add_orderdata'
+
 
