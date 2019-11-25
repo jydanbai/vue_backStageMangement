@@ -340,7 +340,7 @@
 import {DELETE_ORDERDATA} from '../../../store/mutation-types'
 import { mapState } from "vuex";
 import { test } from "../../../api";
-import {DELETE_ORDERDATA } from '../../../store/mutation-types'
+// import {DELETE_ORDERDATA } from '../../../store/mutation-types'
 
 export default {
   data() {
