@@ -6,39 +6,39 @@
       <ul class="H-ul">
         <li class="H-li">
           <span>待发货订单</span>
-          <span class="H-r">{{status.unDelivery}}</span>
+          <span class="H-r">({{status.unDelivery}})</span>
         </li>
         <li class="H-li">
           <span>待付款订单</span>
-          <span class="H-r">{{status.unPay}}</span>
+          <span class="H-r">({{status.unPay}})</span>
         </li>
         <li class="H-li">
           <span>已发货订单</span>
-          <span class="H-r">{{status.deliveried}}</span>
+          <span class="H-r">({{status.deliveried}})</span>
         </li>
         <li class="H-li">
           <span>已完成订单</span>
-          <span class="H-r">{{status.finished}}</span>
+          <span class="H-r">({{status.finished}})</span>
         </li>
         <li class="H-li">
           <span>新缺货登记</span>
-          <span class="H-r">{{status.newlack}}</span>
+          <span class="H-r">({{status.newlack}})</span>
         </li>
         <li class="H-li">
           <span>待处理退货订单</span>
-          <span class="H-r">{{status.waitForSolve}}</span>
+          <span class="H-r">({{status.waitForSolve}})</span>
         </li>
         <li class="H-li">
           <span>待确认收获订单</span>
-          <span class="H-r">{{status.waitForConfirm}}</span>
+          <span class="H-r">({{status.waitForConfirm}})</span>
         </li>
         <li class="H-li">
           <span>待处理退款申请</span>
-          <span class="H-r">{{status.waitForRefund}}</span>
+          <span class="H-r">({{status.waitForRefund}})</span>
         </li>
         <li class="H-li">
           <span>广告位即将到期</span>
-          <span class="H-r">{{status.addWillExpire}}</span>
+          <span class="H-r">({{status.addWillExpire}})</span>
         </li>
       </ul>
     </div>

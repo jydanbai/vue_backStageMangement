@@ -279,10 +279,10 @@
       <div class="footer-you">
         <div class="block">
            <el-pagination
-          :page-sizes="[1, 2, 3, 4]"
-          :page-size="7"
+          :page-sizes="[5, 10, 20, 50]"
+          :page-size="page"
           layout="total, sizes, prev, pager, next, jumper"
-          :total="77"
+          :total="totals"
         ></el-pagination>
         </div>
       </div>
